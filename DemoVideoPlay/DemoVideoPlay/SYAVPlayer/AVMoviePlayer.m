@@ -193,9 +193,49 @@
     self.playerLayer.frame = self.bounds;
     [self.layer addSublayer:self.playerLayer];
     
-    [self addKVO];
+    [self refresuPlayerUI];
     
     [self bringSubviewToFront:self.playerView];
+}
+
+- (void)refresuPlayerUI
+{
+    // 添加KVO
+    [self addKVO];
+    
+    // 设置每秒执行一次进度更新
+    AVMoviePlayer __weak *weakSelf = self;
+    [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+        float current = CMTimeGetSeconds(time);
+        NSLog(@"1 current time = %.2f", current);
+        
+        float total = CMTimeGetSeconds([weakSelf.player.currentItem duration]);
+        NSLog(@"2 total time = %.2f", total);
+        
+        if (current)
+        {
+            CGFloat progress = current / total;
+            NSLog(@"3 progress = %.2f", progress);
+        }
+        
+        [weakSelf refreshPlayerUIWithTime:current totalTime:total];
+    }];
+}
+
+- (void)refreshPlayerUIWithTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime
+{
+    // 播放当前时间
+    NSString *currentStr = [AVMoviePlayerTools timeStringWithSecond:currentTime prefix:@""];
+    self.playerView.playerStatusView.currentTimeLabel.text = currentStr;
+    
+    // 播放剩余时间
+    float remainTime = (totalTime - currentTime);
+    NSString *remainStr = [AVMoviePlayerTools timeStringWithSecond:remainTime prefix:@"-"];
+    self.playerView.playerStatusView.remainsTimeLabel.text = remainStr;
+    
+    // 播放进度
+    float progress = currentTime / totalTime;
+    self.playerView.playerStatusView.progressSlider.value = progress;
 }
 
 - (void)playNetworkMovie
@@ -281,30 +321,30 @@
         _playerNetwork = [AVPlayer playerWithPlayerItem:playerItem];
         // _avPlayer.currentItem;//用于获取当前的AVPlayerItem
         
-//         3.设置每秒执行一次进度更新
-//                UIProgressView *progressView = _progress;
-//                [_moviePlayer addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-//                    float current = CMTimeGetSeconds(time);
-//                    float total = CMTimeGetSeconds([playerItem duration]);
-//                    if (current)
-//                    {
-//                        progressView.progress = current / total;
-//                    }
-//                }];
-        
+         3.设置每秒执行一次进度更新
+                UIProgressView *progressView = _progress;
+                [_moviePlayer addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+                    float current = CMTimeGetSeconds(time);
+                    float total = CMTimeGetSeconds([playerItem duration]);
+                    if (current)
+                    {
+                        progressView.progress = current / total;
+                    }
+                }];
+ 
         // 监控播放状态
         // 监控状态属性，获取播放状态
         [_playerNetwork.currentItem addObserver:self forKeyPath:playerStatus options:NSKeyValueObservingOptionNew context:nil];
         // 监控网络加载情况
         [_playerNetwork.currentItem addObserver:self forKeyPath:playerNetwork options:NSKeyValueObservingOptionNew context:nil];
         
-//        // 5.创建播放层，开始播放视频
-//        AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_moviePlayer];
-//        playerLayer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-//
-//        [self.view.layer addSublayer:playerLayer];
-//        // [_moviePlayer play];
-        
+        // 5.创建播放层，开始播放视频
+        AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_moviePlayer];
+        playerLayer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+
+        [self.view.layer addSublayer:playerLayer];
+        // [_moviePlayer play];
+ 
     }
     
     return _playerNetwork;

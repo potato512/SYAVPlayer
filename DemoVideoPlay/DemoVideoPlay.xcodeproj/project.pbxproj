@@ -47,6 +47,7 @@
 		A7F7C8A91DD46E18002EBD07 /* AVMoviePlayerStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7C88D1DD46E18002EBD07 /* AVMoviePlayerStatusView.m */; };
 		A7F7C8AA1DD46E18002EBD07 /* AVMoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7C88F1DD46E18002EBD07 /* AVMoviePlayerView.m */; };
 		A7F7C8AE1DD46E37002EBD07 /* SYMPMoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7C8AD1DD46E37002EBD07 /* SYMPMoviePlayer.m */; };
+		A7F7C8B11DD47915002EBD07 /* AVMoviePlayerTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7C8B01DD47915002EBD07 /* AVMoviePlayerTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		A7F7C88F1DD46E18002EBD07 /* AVMoviePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayerView.m; sourceTree = "<group>"; };
 		A7F7C8AC1DD46E37002EBD07 /* SYMPMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMPMoviePlayer.h; sourceTree = "<group>"; };
 		A7F7C8AD1DD46E37002EBD07 /* SYMPMoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPMoviePlayer.m; sourceTree = "<group>"; };
+		A7F7C8AF1DD47915002EBD07 /* AVMoviePlayerTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayerTools.h; sourceTree = "<group>"; };
+		A7F7C8B01DD47915002EBD07 /* AVMoviePlayerTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayerTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,8 @@
 				A7F7C88D1DD46E18002EBD07 /* AVMoviePlayerStatusView.m */,
 				A7F7C88E1DD46E18002EBD07 /* AVMoviePlayerView.h */,
 				A7F7C88F1DD46E18002EBD07 /* AVMoviePlayerView.m */,
+				A7F7C8AF1DD47915002EBD07 /* AVMoviePlayerTools.h */,
+				A7F7C8B01DD47915002EBD07 /* AVMoviePlayerTools.m */,
 			);
 			path = SYAVPlayer;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				A7EE102C1DCC8AA9000262F1 /* MPMoviePlayerVC.m in Sources */,
 				A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */,
 				A7F7C8901DD46E18002EBD07 /* AVMoviePlayer.m in Sources */,
+				A7F7C8B11DD47915002EBD07 /* AVMoviePlayerTools.m in Sources */,
 				A7EE0FFC1DCC8634000262F1 /* AppDelegate.m in Sources */,
 				A7EE0FF91DCC8634000262F1 /* main.m in Sources */,
 				A7F7C8AA1DD46E18002EBD07 /* AVMoviePlayerView.m in Sources */,
