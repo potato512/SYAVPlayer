@@ -25,6 +25,7 @@
         
         self.userInteractionEnabled = YES;
         self.backgroundColor = [UIColor clearColor];
+        self.autoresizesSubviews = YES;
         [self setUI];
     }
     

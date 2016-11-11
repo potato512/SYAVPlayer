@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-// 导入头文件
 #import <AVFoundation/AVFoundation.h>
+
+#import "AVMoviePlayerHeader.h"
 
 
 @interface AVMoviePlayer : UIView
@@ -23,6 +23,9 @@
 
 /// 视频标题
 @property (nonatomic, copy) NSString *videoTitle;
+
+/// 全屏操作
+@property (nonatomic, copy) void (^ scaleScreen)(BOOL isFullScreen);
 
 /// 即将进入后台（暂停播放，并且保留当前播放进度）
 @property (nonatomic, assign) BOOL isResignActivePlayerPause;

@@ -9,9 +9,11 @@
 #ifndef AVMoviePlayerHeader_h
 #define AVMoviePlayerHeader_h
 
+#import "AppDelegate.h"
 #import "AVMoviePlayerTools.h"
 
 
+#define SYAVPlayerDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define SYAVPlayerSelfWeak __weak typeof(self) SYAVPlayerWeakSelf = self
 
 

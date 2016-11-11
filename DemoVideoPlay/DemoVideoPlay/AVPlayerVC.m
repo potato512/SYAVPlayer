@@ -156,6 +156,11 @@
     [self.view addSubview:player];
     player.videoUrl = urlStr;
     player.videoTitle = @"本地视频";
+    SYAVPlayerSelfWeak;
+    player.scaleScreen = ^(BOOL isFullScreen){
+        SYAVPlayerDelegate.allowRotation = isFullScreen;
+        [SYAVPlayerWeakSelf.navigationController setNavigationBarHidden:isFullScreen animated:YES];
+    };
     
 }
 

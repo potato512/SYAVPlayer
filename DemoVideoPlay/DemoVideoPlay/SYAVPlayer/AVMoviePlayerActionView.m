@@ -20,6 +20,7 @@
     if (self)
     {
         self.backgroundColor = [UIColor clearColor];
+        self.autoresizesSubviews = YES;
         [self setUI];
     }
     

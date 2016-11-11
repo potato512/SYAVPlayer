@@ -7,7 +7,6 @@
 //
 
 #import "AVMoviePlayer.h"
-#import "AVMoviePlayerHeader.h"
 #import "AVMoviePlayerView.h"
 
 @interface AVMoviePlayer () <UIGestureRecognizerDelegate>
@@ -45,6 +44,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        self.autoresizesSubviews = YES;
         [self setUI];
         
         // 添加手势
@@ -84,7 +84,12 @@
 
 - (void)scaleMovie:(UIButton *)button
 {
-    button.selected = !button.selected;
+    if (self.scaleScreen)
+    {
+        button.selected = !button.selected;
+        self.frame = (button.selected ? CGRectZero : self.superview.bounds);
+        self.scaleScreen(button.selected);
+    }
 }
 
 - (void)slideMovie:(UISlider *)slider
@@ -107,7 +112,6 @@
         // 如果拖动进度条时，正在播放，则先停止播放，同时移除时间观察者
         self.isSliderDraging = YES;
         [self.player pause];
-        self.playerView.playerActionView.playButton.selected = NO;
     }
 }
 
@@ -119,7 +123,6 @@
     if (self.isSliderDraging)
     {
         self.isSliderDraging = NO;
-        self.playerView.playerActionView.playButton.selected = YES;
         [self.player play];
     }
 }
