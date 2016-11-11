@@ -23,6 +23,7 @@
         rect.size.height = heightStatusView;
         self.frame = rect;
         
+        self.userInteractionEnabled = YES;
         self.backgroundColor = [UIColor clearColor];
         [self setUI];
     }

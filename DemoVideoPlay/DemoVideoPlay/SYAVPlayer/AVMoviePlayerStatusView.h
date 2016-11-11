@@ -16,7 +16,7 @@
 /// 剩余时间
 @property (nonatomic, strong) UILabel *remainsTimeLabel;
 
-/// 播放进度
+/// 播放进度（拖拉）
 @property (nonatomic, strong) UISlider *progressSlider;
 
 /// 放大按钮

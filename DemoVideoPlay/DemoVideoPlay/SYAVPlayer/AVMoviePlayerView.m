@@ -32,7 +32,12 @@
     [self addSubview:self.playerStatusView];
     
     self.progressView.frame = CGRectMake(0.0, (self.frame.size.height - 5.0), self.frame.size.width, 5.0);
+    self.progressView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     [self addSubview:self.progressView];
+    
+    // 初始化时状态
+    self.playerActionView.hidden = NO;
+    self.playerStatusView.hidden = NO;
     self.progressView.hidden = YES;
 }
 
@@ -63,6 +68,9 @@
     if (!_progressView)
     {
         _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0, 3.0);
+        _progressView.transform = transform;
     }
     
     return _progressView;

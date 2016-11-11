@@ -57,7 +57,7 @@
         _titleLabel = [[UILabel alloc] init];
         
         _titleLabel.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
-        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.font = [UIFont systemFontOfSize:14.0];
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.numberOfLines = 2;

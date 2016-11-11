@@ -53,9 +53,10 @@
 }
 
 // 视频播放完成
-- (void)playbackFinish:(NSNotification *)notification
+- (void)playEndNotification:(NSNotification *)notification
 {
     NSLog(@"视频播放完成");
+    [self.player seekToTime:kCMTimeZero];
 }
 
 // 通过KVO监控播放器的状态
@@ -86,12 +87,18 @@
 - (void)playMovie
 {
     // 播放本地视频
-//    NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp4"];
-//    NSURL *url = [NSURL fileURLWithPath:urlStr];
+    NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"movie02" ofType:@"mov"];
+    NSURL *url = [NSURL fileURLWithPath:urlStr];
     
     // 播放网络视频
-    NSString *urlStr = @"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8";
-    NSURL *url = [NSURL URLWithString:urlStr];
+//    NSString *urlStr = @"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8";
+//    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    if (self.player)
+    {
+        // 已经创建则不再创建
+        return;
+    }
     
     AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
     self.player = [AVPlayer playerWithPlayerItem:item];
@@ -100,8 +107,10 @@
     [self.view.layer addSublayer:layer];
     [self.player play];
     
+    // 设置KVC 播放结束
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playEndNotification:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     // 设置KVO
-//    [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     // 设置每秒执行一次进度更新
     AVPlayerVC __weak *weakSelf = self;
     [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
@@ -117,36 +126,33 @@
             NSLog(@"3 progress = %.2f", progress);
         }
     }];
-
 }
 
 #pragma mark - 封装使用
 
 - (void)playPause:(id)sender
 {
-//    if (self.moviePlayer.rate == 0)
-//    {
-//        // 暂停时，继续播放
-//        [self.moviePlayer play];
-//    }
-//    else if (self.moviePlayer.rate == 1)
-//    {
-//        // 正在播放时，暂停
-//        [self.moviePlayer pause];
-//    }
-    
     // 未封装
 //    [self playMovie];
+//    if (self.player.rate == 0)
+//    {
+//        // 暂停时，继续播放
+//        [self.player play];
+//    }
+//    else if (self.player.rate == 1)
+//    {
+//        // 正在播放时，暂停
+//        [self.player pause];
+//    }
+    
+    
     
     
     
     // 封装
-    NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp4"];
-    
+    NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"movie02" ofType:@"mov"];    
     CGRect rect = CGRectMake(10.0, 10.0, (self.view.bounds.size.width - 10.0 * 2), 200.0);
-    
     AVMoviePlayer *player = [[AVMoviePlayer alloc] initWithFrame:rect];
-    player.backgroundColor = [UIColor greenColor];
     [self.view addSubview:player];
     player.videoUrl = urlStr;
     player.videoTitle = @"本地视频";

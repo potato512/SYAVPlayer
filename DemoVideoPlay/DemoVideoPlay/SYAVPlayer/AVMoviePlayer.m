@@ -25,7 +25,10 @@
 // 视图
 @property (nonatomic, strong) AVMoviePlayerView *playerView; // 播放播放、状态视图
 
-// 定时
+// 播放控制
+@property (nonatomic, assign) NSTimeInterval playerTotalTime;   // 视频总时长
+@property (nonatomic ,strong) id timeObserver;                  // 时间观察者
+@property (nonatomic, assign) BOOL isSliderDraging;             // 正在拖动，用于控制拖动操作时的处理（正在播放时，才会有正在拖动）
 @property (nonatomic, strong) NSTimer *playerTimer;             // 播放定时器
 @property (nonatomic, assign) NSTimeInterval lastPlayDuration;  // 切到后台前最后播放的时间
 @property (nonatomic, assign) BOOL isShowInfo;                  // 是否显示或隐藏操作视图
@@ -55,9 +58,9 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
+    [self removeNotification];
     [self removeKVO];
+    [self removeTimerObserver];
 }
 
 #pragma mark - 视图
@@ -68,24 +71,6 @@
     [self addSubview:self.backgroundImageView];
     
     [self addSubview:self.playerView];
-}
-
-
-#pragma mark - 通知
-
-- (void)addNotification
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionNotification) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-}
-
-- (void)actionNotification
-{
-    NSLog(@"播放完成");
-    
-    if (self.playerLayer.superlayer)
-    {
-        [self.playerLayer removeFromSuperlayer];
-    }
 }
 
 #pragma mark - 响应事件
@@ -104,7 +89,39 @@
 
 - (void)slideMovie:(UISlider *)slider
 {
+    CGFloat progress = slider.value;
     
+    // 重置播放进度状态
+    NSTimeInterval currentTime = (progress * self.playerTotalTime);
+    [self.player seekToTime:CMTimeMake(currentTime, 1.0)];
+    [self refreshPlayerUIWithTime:currentTime totalTime:self.playerTotalTime slider:NO];
+}
+
+- (void)slideBeginMovie:(UISlider *)slider
+{
+    NSLog(@"slider 开始拖动");
+    
+    [self removeTimerObserver];
+    if (self.player.rate == 1.0)
+    {
+        // 如果拖动进度条时，正在播放，则先停止播放，同时移除时间观察者
+        self.isSliderDraging = YES;
+        [self.player pause];
+        self.playerView.playerActionView.playButton.selected = NO;
+    }
+}
+
+- (void)slideEndMovie:(UISlider *)slider
+{
+    NSLog(@"slider 结束拖动");
+    
+    [self addTimerObserver];
+    if (self.isSliderDraging)
+    {
+        self.isSliderDraging = NO;
+        self.playerView.playerActionView.playButton.selected = YES;
+        [self.player play];
+    }
 }
 
 #pragma mark UIGestureRecognizerDelegate
@@ -122,7 +139,59 @@
 
 - (void)tapClick:(UITapGestureRecognizer *)recognizer
 {
-    self.playerView.hidden = !self.playerView.hidden;
+    self.playerView.playerActionView.hidden = !self.playerView.playerActionView.hidden;
+    self.playerView.playerStatusView.hidden = !self.playerView.playerStatusView.hidden;
+    self.playerView.progressView.hidden = !self.playerView.progressView.hidden;
+}
+
+#pragma mark KVC
+
+- (void)addNotification
+{
+    // 播放结束
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playEndNotification:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    //
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playJumpNotification:) name:AVPlayerItemTimeJumpedNotification object:nil];
+    //
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playBackStalledNotification:) name:AVPlayerItemPlaybackStalledNotification object:nil];
+    // 播放进入后台
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playEnterBgroundNotification:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+- (void)removeNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemTimeJumpedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemPlaybackStalledNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+- (void)playEndNotification:(NSNotification *)notification
+{
+    NSLog(@"播放结束");
+
+    // 设置播放前的状态
+    [self.player seekToTime:kCMTimeZero];
+    self.playerView.playerActionView.playButton.selected = NO;
+    [self refreshPlayerUIWithTime:0.0 totalTime:self.playerTotalTime slider:YES];
+}
+
+- (void)playJumpNotification:(NSNotification *)notification
+{
+    NSLog(@"播放跳跃");
+    
+}
+
+- (void)playBackStalledNotification:(NSNotification *)notification
+{
+    NSLog(@"播放结束");
+    
+}
+
+- (void)playEnterBgroundNotification:(NSNotification *)notification
+{
+    NSLog(@"播放进入后台");
+    
 }
 
 #pragma mark KVO
@@ -131,6 +200,8 @@
 {
     // 监控状态属性，获取播放状态
     [self.playerItem addObserver:self forKeyPath:SYAVPlayerStatus options:NSKeyValueObservingOptionNew context:nil];
+    // 监控网络加载情况
+//    [self.playerItem addObserver:self forKeyPath:playerNetwork options:NSKeyValueObservingOptionNew context:nil];
 //    [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
 //    [self.playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
 }
@@ -153,8 +224,10 @@
             {
                 NSLog(@"AVPlayerItemStatusReadyToPlay");
                 
-//                [self.player play];
-//                _videoLength = floor(self.playerItem.asset.duration.value * 1.0 / self.playerItem.asset.duration.timescale);
+                // 设置播放前的状态
+                NSTimeInterval current = CMTimeGetSeconds(self.player.currentTime);
+                self.playerTotalTime = CMTimeGetSeconds(self.player.currentItem.duration);
+                [self refreshPlayerUIWithTime:current totalTime:self.playerTotalTime slider:YES];
             }
                 break;
             case AVPlayerItemStatusUnknown:
@@ -183,13 +256,34 @@
     }
 }
 
+#pragma mark TimerObserver
+
+- (void)addTimerObserver
+{
+    // 设置每秒执行一次进度更新
+    SYAVPlayerSelfWeak;
+    self.timeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+        NSTimeInterval current = CMTimeGetSeconds(time);
+        NSLog(@"1 current time = %f", current);
+        NSLog(@"2 total time = %f", SYAVPlayerWeakSelf.playerTotalTime);
+        NSLog(@"3 progress = %f", (current / SYAVPlayerWeakSelf.playerTotalTime));
+        NSLog(@"4 rate = %@", @(SYAVPlayerWeakSelf.player.rate));
+        
+        [SYAVPlayerWeakSelf refreshPlayerUIWithTime:current totalTime:SYAVPlayerWeakSelf.playerTotalTime slider:YES];
+    }];
+}
+
+- (void)removeTimerObserver
+{
+    [self.player removeTimeObserver:self.timeObserver];
+}
 
 #pragma mark - 播放器
 
 - (void)setPlayerUI
 {
     NSAssert(_videoUrl != nil, @"视频地址不能为空!");
-    
+
     self.playerLayer.frame = self.bounds;
     [self.layer addSublayer:self.playerLayer];
     
@@ -203,26 +297,14 @@
     // 添加KVO
     [self addKVO];
     
-    // 设置每秒执行一次进度更新
-    AVMoviePlayer __weak *weakSelf = self;
-    [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        float current = CMTimeGetSeconds(time);
-        NSLog(@"1 current time = %.2f", current);
-        
-        float total = CMTimeGetSeconds([weakSelf.player.currentItem duration]);
-        NSLog(@"2 total time = %.2f", total);
-        
-        if (current)
-        {
-            CGFloat progress = current / total;
-            NSLog(@"3 progress = %.2f", progress);
-        }
-        
-        [weakSelf refreshPlayerUIWithTime:current totalTime:total];
-    }];
+    // 添加KVC
+    [self addNotification];
+    
+    // 添加timerObserver
+    [self addTimerObserver];
 }
 
-- (void)refreshPlayerUIWithTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime
+- (void)refreshPlayerUIWithTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime slider:(BOOL)isSlider
 {
     // 播放当前时间
     NSString *currentStr = [AVMoviePlayerTools timeStringWithSecond:currentTime prefix:@""];
@@ -235,7 +317,12 @@
     
     // 播放进度
     float progress = currentTime / totalTime;
-    self.playerView.playerStatusView.progressSlider.value = progress;
+    self.playerView.progressView.progress = progress;
+    if (isSlider)
+    {
+        // 拖动slider时，不需要改变；只有播放时才需要改变
+        self.playerView.playerStatusView.progressSlider.value = progress;
+    }
 }
 
 - (void)playNetworkMovie
@@ -245,12 +332,12 @@
 
 - (void)playLocalMovie
 {
-    if (self.player.rate == 0)
+    if (self.player.rate == 0.0)
     {
         // 暂停时，继续播放
         [self.player play];
     }
-    else if (self.player.rate == 1)
+    else if (self.player.rate == 1.0)
     {
         // 正在播放时，暂停
         [self.player pause];
@@ -310,47 +397,6 @@
     return NO;
 }
 
-
-/*
-- (AVPlayer *)playerNetwork
-{
-    if (_playerNetwork == nil)
-    {
-        // AVPlayer
-        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:self.urlPlayer];
-        _playerNetwork = [AVPlayer playerWithPlayerItem:playerItem];
-        // _avPlayer.currentItem;//用于获取当前的AVPlayerItem
-        
-         3.设置每秒执行一次进度更新
-                UIProgressView *progressView = _progress;
-                [_moviePlayer addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-                    float current = CMTimeGetSeconds(time);
-                    float total = CMTimeGetSeconds([playerItem duration]);
-                    if (current)
-                    {
-                        progressView.progress = current / total;
-                    }
-                }];
- 
-        // 监控播放状态
-        // 监控状态属性，获取播放状态
-        [_playerNetwork.currentItem addObserver:self forKeyPath:playerStatus options:NSKeyValueObservingOptionNew context:nil];
-        // 监控网络加载情况
-        [_playerNetwork.currentItem addObserver:self forKeyPath:playerNetwork options:NSKeyValueObservingOptionNew context:nil];
-        
-        // 5.创建播放层，开始播放视频
-        AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_moviePlayer];
-        playerLayer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-
-        [self.view.layer addSublayer:playerLayer];
-        // [_moviePlayer play];
- 
-    }
-    
-    return _playerNetwork;
-}
-*/
-
 - (AVPlayerItem *)playerItem
 {
     if (_playerItem == nil)
@@ -393,6 +439,8 @@
         _backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        // 去除视图界外的图标
+        _backgroundImageView.clipsToBounds = YES;
         _backgroundImageView.backgroundColor = [UIColor clearColor];
     }
     
@@ -408,6 +456,9 @@
         [_playerView.playerActionView.playButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
         [_playerView.playerStatusView.scaleButton addTarget:self action:@selector(scaleMovie:) forControlEvents:UIControlEventTouchUpInside];
         [_playerView.playerStatusView.progressSlider addTarget:self action:@selector(slideMovie:) forControlEvents:UIControlEventValueChanged];
+        [_playerView.playerStatusView.progressSlider addTarget:self action:@selector(slideBeginMovie:) forControlEvents:UIControlEventTouchDown];
+        [_playerView.playerStatusView.progressSlider addTarget:self action:@selector(slideEndMovie:) forControlEvents:UIControlEventTouchUpOutside];
+        [_playerView.playerStatusView.progressSlider addTarget:self action:@selector(slideEndMovie:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _playerView;
