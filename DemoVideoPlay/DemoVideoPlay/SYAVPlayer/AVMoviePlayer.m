@@ -28,7 +28,8 @@
 @property (nonatomic, assign) NSTimeInterval playerTotalTime;   // 视频总时长
 @property (nonatomic ,strong) id timeObserver;                  // 时间观察者
 @property (nonatomic, assign) BOOL isSliderDraging;             // 正在拖动，用于控制拖动操作时的处理（正在播放时，才会有正在拖动）
-@property (nonatomic, strong) NSTimer *playerTimer;             // 播放定时器
+@property (nonatomic, strong) NSTimer *showInfoTimer;           // 隐藏操作视图的播放定时器
+@property (nonatomic, assign) NSTimeInterval showInfoTime;      // 自动隐藏操作视图的的时间
 @property (nonatomic, assign) NSTimeInterval lastPlayDuration;  // 切到后台前最后播放的时间
 @property (nonatomic, assign) BOOL isShowInfo;                  // 是否显示或隐藏操作视图
 @property (nonatomic, assign) BOOL isloading;                   // 首次播放加载时，显示加载
@@ -80,6 +81,8 @@
     button.selected = !button.selected;
     
     [self playLocalMovie];
+    
+    [self showInfoUIStart:button.selected];
 }
 
 - (void)scaleMovie:(UIButton *)button
@@ -127,6 +130,38 @@
     }
 }
 
+#pragma mark timer
+
+- (void)showInfoUIWithTimer
+{
+    NSLog(@"self.showInfoTime = %@", @(self.showInfoTime));
+    if (delayTime <= self.showInfoTime)
+    {
+        // 隐藏操作视图，且关闭定时器
+        [self showInfoUI];
+        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+    }
+    
+    self.showInfoTime++;
+}
+
+- (void)showInfoUIStart:(BOOL)isStart
+{
+    if (isStart)
+    {
+        // 正在播放，自动隐藏操作视图
+        // 启动定时器
+        self.showInfoTime = 0.0;
+        [self.showInfoTimer setFireDate:[NSDate distantPast]];
+    }
+    else
+    {
+        // 停止播放，不隐藏操作视图
+        // 关闭定时器
+        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+    }
+}
+
 #pragma mark UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -141,6 +176,13 @@
 }
 
 - (void)tapClick:(UITapGestureRecognizer *)recognizer
+{
+    [self showInfoUI];
+    
+    [self showInfoUIStart:self.playerView.progressView.hidden];
+}
+
+- (void)showInfoUI
 {
     self.playerView.playerActionView.hidden = !self.playerView.playerActionView.hidden;
     self.playerView.playerStatusView.hidden = !self.playerView.playerStatusView.hidden;
@@ -177,6 +219,7 @@
     [self.player seekToTime:kCMTimeZero];
     self.playerView.playerActionView.playButton.selected = NO;
     [self refreshPlayerUIWithTime:0.0 totalTime:self.playerTotalTime slider:YES];
+    [self showInfoUI];
 }
 
 - (void)playJumpNotification:(NSNotification *)notification
@@ -465,6 +508,20 @@
     }
     
     return _playerView;
+}
+
+#pragma mark timer
+
+- (NSTimer *)showInfoTimer
+{
+    if (_showInfoTimer == nil)
+    {
+        _showInfoTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showInfoUIWithTimer) userInfo:nil repeats:YES];
+        // 关闭定时器方法
+        [_showInfoTimer setFireDate:[NSDate distantFuture]];
+    }
+    
+    return _showInfoTimer;
 }
 
 @end

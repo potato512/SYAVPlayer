@@ -27,7 +27,8 @@ static CGFloat const sizeButton = 40.0;
 
 static CGFloat const heightStatusView = 30.0;
 
-static NSTimeInterval const delayTime = 2.0;
+static NSTimeInterval const delayTime = 3.0;
+
 
 static NSString *const SYAVPlayerStatus = @"status";
 
@@ -61,6 +62,7 @@ static NSString *const titleZoomoutStatus = @"缩小";
  （6）缩小点击：返回原来的播放尺寸，同时显示放大图标
  （7）点击音量：显示，或隐藏音量控制图标
  （8）拖动音量：放大，或缩小声音
+ （9）自动隐藏控制页面——done20161114
  
  3、注意事项
  （1）使用通知模式监测播放状态
