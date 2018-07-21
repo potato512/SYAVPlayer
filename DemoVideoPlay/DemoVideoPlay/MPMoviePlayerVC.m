@@ -106,9 +106,9 @@
 - (void)startPlay:(UIBarButtonItem *)button
 {
     // 本地文件
-//    NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp4"];
+    NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp4"];
     // 视频文件
-    NSString *moviePath = @"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8";
+//    NSString *moviePath = @"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8";
     
     // 方法1
 //    [self moviePlay:moviePath];

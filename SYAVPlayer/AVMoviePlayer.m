@@ -7,7 +7,6 @@
 //
 
 #import "AVMoviePlayer.h"
-#import "AVMoviePlayerView.h"
 
 @interface AVMoviePlayer () <UIGestureRecognizerDelegate>
 
@@ -21,8 +20,6 @@
 
 /// 视频播放前的背景图标
 @property (nonatomic, strong) UIImageView *backgroundImageView;
-// 视图
-@property (nonatomic, strong) AVMoviePlayerView *playerView; // 播放播放、状态视图
 
 // 播放控制
 @property (nonatomic, assign) NSTimeInterval playerTotalTime;   // 视频总时长
@@ -87,11 +84,11 @@
 
 - (void)scaleMovie:(UIButton *)button
 {
-    if (self.scaleScreen)
+    if (self.scaleClick)
     {
         button.selected = !button.selected;
         self.frame = (button.selected ? CGRectZero : self.superview.bounds);
-        self.scaleScreen(button.selected);
+        self.scaleClick(button.selected);
     }
 }
 
