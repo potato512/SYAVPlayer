@@ -60,3 +60,11 @@ player.scaleClick = ^(BOOL isFullScreen){
 
 ![AVMoviePlayer](./AVMoviePlayer.gif)
 
+
+
+#### 修改完善
+* 20180721 
+  * 版本号：1.0.0
+  * 源码
+  
+
