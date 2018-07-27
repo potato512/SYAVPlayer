@@ -1,14 +1,14 @@
 //
-//  AVMoviePlayer.m
+//  SYAVPlayer.m
 //  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/9.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
 //
 
-#import "AVMoviePlayer.h"
+#import "SYAVPlayer.h"
 
-@interface AVMoviePlayer () <UIGestureRecognizerDelegate>
+@interface SYAVPlayer () <UIGestureRecognizerDelegate>
 
 // 播放器
 @property (nonatomic, strong) NSURL *playerUrl; // 视频地址
@@ -33,7 +33,7 @@
 
 @end
 
-@implementation AVMoviePlayer
+@implementation SYAVPlayer
 
 #pragma mark - 实例化
 
@@ -181,7 +181,11 @@
 
 - (void)showInfoUI
 {
-    self.playerView.playerActionView.hidden = !self.playerView.playerActionView.hidden;
+    if (self.playerView.viewType == SYAVPlayerStatusViewTypeBottom) {
+        
+    } else {
+        self.playerView.playerActionView.hidden = !self.playerView.playerActionView.hidden;
+    }
     self.playerView.playerStatusView.hidden = !self.playerView.playerStatusView.hidden;
     self.playerView.progressView.hidden = !self.playerView.progressView.hidden;
 }
@@ -215,6 +219,7 @@
     // 设置播放前的状态
     [self.player seekToTime:kCMTimeZero];
     self.playerView.playerActionView.playButton.selected = NO;
+    self.playerView.playerStatusView.playButton.selected = NO;
     [self refreshPlayerUIWithTime:0.0 totalTime:self.playerTotalTime slider:YES];
     [self showInfoUI];
 }
@@ -228,7 +233,6 @@
 - (void)playBackStalledNotification:(NSNotification *)notification
 {
     NSLog(@"播放结束");
-    
 }
 
 - (void)playEnterBgroundNotification:(NSNotification *)notification
@@ -350,12 +354,12 @@
 - (void)refreshPlayerUIWithTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime slider:(BOOL)isSlider
 {
     // 播放当前时间
-    NSString *currentStr = [AVMoviePlayerTools timeStringWithSecond:currentTime prefix:@""];
+    NSString *currentStr = [SYAVPlayerTools timeStringWithSecond:currentTime prefix:@""];
     self.playerView.playerStatusView.currentTimeLabel.text = currentStr;
     
     // 播放剩余时间
     float remainTime = (totalTime - currentTime);
-    NSString *remainStr = [AVMoviePlayerTools timeStringWithSecond:remainTime prefix:@"-"];
+    NSString *remainStr = [SYAVPlayerTools timeStringWithSecond:remainTime prefix:@"-"];
     self.playerView.playerStatusView.remainsTimeLabel.text = remainStr;
     
     // 播放进度
@@ -490,13 +494,15 @@
     return _backgroundImageView;
 }
 
-- (AVMoviePlayerView *)playerView
+- (SYAVPlayerView *)playerView
 {
     if (_playerView == nil)
     {
-        _playerView = [[AVMoviePlayerView alloc] initWithFrame:self.bounds];
+        _playerView = [[SYAVPlayerView alloc] initWithFrame:self.bounds];
         
         [_playerView.playerActionView.playButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [_playerView.playerStatusView.playButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
         [_playerView.playerStatusView.scaleButton addTarget:self action:@selector(scaleMovie:) forControlEvents:UIControlEventTouchUpInside];
         [_playerView.playerStatusView.progressSlider addTarget:self action:@selector(slideMovie:) forControlEvents:UIControlEventValueChanged];
         [_playerView.playerStatusView.progressSlider addTarget:self action:@selector(slideBeginMovie:) forControlEvents:UIControlEventTouchDown];

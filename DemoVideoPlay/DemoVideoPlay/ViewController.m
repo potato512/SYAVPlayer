@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "MPMoviePlayerVC.h"
 #import "AVPlayerVC.h"
+#import "RecorderImagePickerVC.h"
+#import "RecorderAVCaptureSessionFileOutVC.h"
+#import "RecorderAVCaptureSessionWriteVC.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -62,7 +65,7 @@
 {
     if (_mainArray == nil)
     {
-        _mainArray = @[@"MPMoviePlayerViewController", @"AVPlayer"];
+        _mainArray = @[@"MPMoviePlayerViewController", @"AVPlayer", @"UIImagePickerController 录像", @"AVCaptureSession+AVCaptureMovieFileOutput 录像", @"AVCaptureSession+AVAssetWriter 录像"];
     }
     
     return _mainArray;
@@ -93,14 +96,20 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (0 == indexPath.row)
-    {
+    if (0 == indexPath.row) {
         MPMoviePlayerVC *nextVC = [[MPMoviePlayerVC alloc] init];
         [self.navigationController pushViewController:nextVC animated:YES];
-    }
-    else if (1 == indexPath.row)
-    {
+    } else if (1 == indexPath.row) {
         AVPlayerVC *nextVC = [[AVPlayerVC alloc] init];
+        [self.navigationController pushViewController:nextVC animated:YES];
+    } else if (2 == indexPath.row) {
+        RecorderImagePickerVC *nextVC = [[RecorderImagePickerVC alloc] init];
+        [self.navigationController pushViewController:nextVC animated:YES];
+    } else if (3 == indexPath.row) {
+        RecorderAVCaptureSessionFileOutVC *nextVC = [[RecorderAVCaptureSessionFileOutVC alloc] init];
+        [self.navigationController pushViewController:nextVC animated:YES];
+    } else if (4 == indexPath.row) {
+        RecorderAVCaptureSessionWriteVC *nextVC = [[RecorderAVCaptureSessionWriteVC alloc] init];
         [self.navigationController pushViewController:nextVC animated:YES];
     }
 }

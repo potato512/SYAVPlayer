@@ -21,6 +21,7 @@
 
 @end
 
+
 /*
  
  步骤1 添加“MediaPlayer.framework”库
@@ -28,11 +29,4 @@
  步骤2 导入头文件
  #import <MediaPlayer/MediaPlayer.h>
 
- 步骤3 使用
- 1、添加头文件
- #import "SYMPMoviePlayer.h"
- 
- 2、使用方法（全屏播放）
- [[SYMPMoviePlayer shareMPMoviePlayer] playWithFilePath:moviePath target:self];
- 
  */

@@ -1,5 +1,5 @@
 //
-//  AVMoviePlayer.h
+//  SYAVPlayer.h
 //  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/9.
@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "AVMoviePlayerView.h"
+#import "SYAVPlayerView.h"
 
-#import "AVMoviePlayerHeader.h"
+#import "SYAVPlayerHeader.h"
 
 
-@interface AVMoviePlayer : UIView
+@interface SYAVPlayer : UIView
 
 /// 实例化
 - (instancetype)initWithFrame:(CGRect)frame;
@@ -26,7 +26,7 @@
 @property (nonatomic, copy) NSString *videoTitle;
 
 /// 播放播放、状态视图
-@property (nonatomic, strong) AVMoviePlayerView *playerView;
+@property (nonatomic, strong) SYAVPlayerView *playerView;
 
 /// 全屏操作
 @property (nonatomic, copy) void (^scaleClick)(BOOL isFullScreen);

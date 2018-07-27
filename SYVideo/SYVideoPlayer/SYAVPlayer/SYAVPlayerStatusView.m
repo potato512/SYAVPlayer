@@ -1,15 +1,15 @@
 //
-//  AVMoviePlayerStatusView.m
+//  SYAVPlayerStatusView.m
 //  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
 //
 
-#import "AVMoviePlayerStatusView.h"
-#import "AVMoviePlayerHeader.h"
+#import "SYAVPlayerStatusView.h"
+#import "SYAVPlayerHeader.h"
 
-@implementation AVMoviePlayerStatusView
+@implementation SYAVPlayerStatusView
 
 #pragma mark - 实例化
 
@@ -27,6 +27,7 @@
         self.backgroundColor = [UIColor clearColor];
         self.autoresizesSubviews = YES;
         [self setUI];
+        self.viewType = SYAVPlayerStatusViewTypeDefault;
     }
     
     return self;
@@ -36,6 +37,9 @@
 
 - (void)setUI
 {
+    self.playButton.frame = CGRectMake(originX / 2, 0.0, self.frame.size.height, self.frame.size.height);
+    [self addSubview:self.playButton];
+    
     self.currentTimeLabel.frame = CGRectMake(originX / 2, (self.frame.size.height - heightItem) / 2, widthItem, heightItem);
     [self addSubview:self.currentTimeLabel];
     
@@ -55,7 +59,60 @@
     [self addSubview:self.scaleButton];
 }
 
+#pragma mark - setter
+
+- (void)setViewType:(SYAVPlayerStatusViewType)viewType
+{
+    _viewType = viewType;
+    
+    UIView *currentView = self.currentTimeLabel;
+    if (_viewType == SYAVPlayerStatusViewTypeBottom) {
+        self.playButton.hidden = NO;
+        self.currentTimeLabel.hidden = YES;
+        
+        currentView = self.playButton;
+    } else {
+        self.playButton.hidden = YES;
+        self.currentTimeLabel.hidden = NO;
+        
+        currentView = self.currentTimeLabel;
+    }
+
+    //
+    CGRect rect = self.progressSlider.frame;
+    rect.origin.x = (currentView.frame.origin.x + currentView.frame.size.width + originX / 2);
+    rect.size.width = (self.frame.size.width - currentView.frame.origin.x - currentView.frame.size.width - originX / 2 - originX / 2 - widthItem - originX / 2 - heightAction - originX / 2);
+    self.progressSlider.frame = rect;
+    
+    currentView = self.progressSlider;
+    
+    rect = self.remainsTimeLabel.frame;
+    rect.origin.x = (currentView.frame.origin.x + currentView.frame.size.width + originX / 2);
+    self.remainsTimeLabel.frame = rect;
+    
+    currentView = self.remainsTimeLabel;
+    
+    rect = self.scaleButton.frame;
+    rect.origin.x = (self.frame.size.width - heightAction - originX / 2);
+    self.scaleButton.frame = rect;
+}
+
+
 #pragma mark - getter
+
+- (UIButton *)playButton
+{
+    if (_playButton == nil)
+    {
+        _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        _playButton.backgroundColor = [UIColor clearColor];
+        [_playButton setImage:[UIImage imageNamed:@"SYAVPlayer_Play"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"SYAVPlayer_Stop"] forState:UIControlStateSelected];
+    }
+    
+    return _playButton;
+}
 
 - (UILabel *)currentTimeLabel
 {

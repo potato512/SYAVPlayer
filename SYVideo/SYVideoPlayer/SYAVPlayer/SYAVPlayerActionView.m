@@ -1,15 +1,15 @@
 //
-//  AVMoviePlayerActionView.m
-//  DemoVideoPlay
+//  SYAVPlayerActionView.m
+//  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
 //
 
-#import "AVMoviePlayerActionView.h"
-#import "AVMoviePlayerHeader.h"
+#import "SYAVPlayerActionView.h"
+#import "SYAVPlayerHeader.h"
 
-@implementation AVMoviePlayerActionView
+@implementation SYAVPlayerActionView
 
 #pragma mark - 实例化
 

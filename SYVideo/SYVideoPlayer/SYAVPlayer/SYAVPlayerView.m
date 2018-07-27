@@ -1,15 +1,15 @@
 //
-//  AVMoviePlayerView.m
-//  DemoVideoPlay
+//  SYAVPlayerView.m
+//  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
 //
 
-#import "AVMoviePlayerView.h"
-#import "AVMoviePlayerHeader.h"
+#import "SYAVPlayerView.h"
+#import "SYAVPlayerHeader.h"
 
-@implementation AVMoviePlayerView
+@implementation SYAVPlayerView
 
 #pragma mark - 实例化
 
@@ -42,23 +42,36 @@
     self.progressView.hidden = YES;
 }
 
+#pragma mark - setter
+
+- (void)setViewType:(SYAVPlayerStatusViewType)viewType
+{
+    _viewType = viewType;
+    self.playerStatusView.viewType = _viewType;
+    if (_viewType == SYAVPlayerStatusViewTypeBottom) {
+        self.playerActionView.hidden = YES;
+    } else {
+        self.playerActionView.hidden = NO;
+    }
+}
+
 #pragma mark - getter
 
-- (AVMoviePlayerActionView *)playerActionView
+- (SYAVPlayerActionView *)playerActionView
 {
     if (_playerActionView == nil)
     {
-        _playerActionView = [[AVMoviePlayerActionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width, (self.bounds.size.height - heightStatusView))];
+        _playerActionView = [[SYAVPlayerActionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width, (self.bounds.size.height - heightStatusView))];
     }
     
     return _playerActionView;
 }
 
-- (AVMoviePlayerStatusView *)playerStatusView
+- (SYAVPlayerStatusView *)playerStatusView
 {
     if (_playerStatusView == nil)
     {
-        _playerStatusView = [[AVMoviePlayerStatusView alloc] initWithFrame:CGRectMake(0.0, (self.bounds.size.height - heightStatusView), self.bounds.size.width, heightStatusView)];
+        _playerStatusView = [[SYAVPlayerStatusView alloc] initWithFrame:CGRectMake(0.0, (self.bounds.size.height - heightStatusView), self.bounds.size.width, heightStatusView)];
     }
     
     return _playerStatusView;

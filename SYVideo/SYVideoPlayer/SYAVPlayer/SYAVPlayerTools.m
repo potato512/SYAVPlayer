@@ -1,14 +1,14 @@
 //
-//  AVMoviePlayerTools.m
-//  DemoVideoPlay
+//  SYAVPlayerTools.m
+//  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
 //
 
-#import "AVMoviePlayerTools.h"
+#import "SYAVPlayerTools.h"
 
-@implementation AVMoviePlayerTools
+@implementation SYAVPlayerTools
 
 + (NSDictionary *)convertSecond2HourMinuteSecond:(int)second
 {

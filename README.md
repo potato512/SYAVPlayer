@@ -1,20 +1,6 @@
 # SYAVPlayer
 使用AVPlayer自定义视频播放器，播放网络视频，或本地视频
 
-
-// 参考示例
-https://www.jianshu.com/p/fe00883ad3d2
-https://blog.csdn.net/vkooy/article/details/65442600
-https://blog.csdn.net/wang631106979/article/details/51498009
-https://www.jianshu.com/p/86a5393d0e72
-http://www.cocoachina.com/ios/20160518/16328.html
-https://www.jianshu.com/p/7c57c58c253d
-https://www.jianshu.com/p/7ee9de4a1f29
-https://www.jianshu.com/p/6d488a0aee96
-https://www.jianshu.com/p/12db0663cda1
-https://blog.csdn.net/u013749108/article/details/80455881
-https://www.jb51.net/article/109303.htm
-
 # MPMoviePlayerViewController播放视频
 视频播放（使用系统MPMoviePlayerViewController，MPMoviePlayerController）
 

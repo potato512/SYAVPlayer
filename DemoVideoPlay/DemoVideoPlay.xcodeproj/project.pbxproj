@@ -7,37 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74ACA8C210AEBB7001D02ED /* SYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA66210AEBB7001D02ED /* SYAVPlayer.m */; };
+		A74ACA8D210AEBB7001D02ED /* SYAVPlayerActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA68210AEBB7001D02ED /* SYAVPlayerActionView.m */; };
+		A74ACA8E210AEBB7001D02ED /* SYAVPlayerStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA6B210AEBB7001D02ED /* SYAVPlayerStatusView.m */; };
+		A74ACA8F210AEBB7001D02ED /* SYAVPlayerTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA6D210AEBB7001D02ED /* SYAVPlayerTools.m */; };
+		A74ACA90210AEBB7001D02ED /* SYAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA6F210AEBB7001D02ED /* SYAVPlayerView.m */; };
+		A74ACA91210AEBB7001D02ED /* SYAVPlayer_bgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA71210AEBB7001D02ED /* SYAVPlayer_bgroundImage.png */; };
+		A74ACA92210AEBB7001D02ED /* SYAVPlayer_bgroundImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA72210AEBB7001D02ED /* SYAVPlayer_bgroundImage@2x.png */; };
+		A74ACA93210AEBB7001D02ED /* SYAVPlayer_bgroundImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA73210AEBB7001D02ED /* SYAVPlayer_bgroundImage@3x.png */; };
+		A74ACA94210AEBB7001D02ED /* SYAVPlayer_Close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA74210AEBB7001D02ED /* SYAVPlayer_Close@2x.png */; };
+		A74ACA95210AEBB7001D02ED /* SYAVPlayer_Close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA75210AEBB7001D02ED /* SYAVPlayer_Close@3x.png */; };
+		A74ACA96210AEBB7001D02ED /* SYAVPlayer_Control.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA76210AEBB7001D02ED /* SYAVPlayer_Control.png */; };
+		A74ACA97210AEBB7001D02ED /* SYAVPlayer_Control@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA77210AEBB7001D02ED /* SYAVPlayer_Control@2x.png */; };
+		A74ACA98210AEBB7001D02ED /* SYAVPlayer_Control@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA78210AEBB7001D02ED /* SYAVPlayer_Control@3x.png */; };
+		A74ACA99210AEBB7001D02ED /* SYAVPlayer_Play.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA79210AEBB7001D02ED /* SYAVPlayer_Play.png */; };
+		A74ACA9A210AEBB7001D02ED /* SYAVPlayer_Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA7A210AEBB7001D02ED /* SYAVPlayer_Play@2x.png */; };
+		A74ACA9B210AEBB7001D02ED /* SYAVPlayer_Play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA7B210AEBB7001D02ED /* SYAVPlayer_Play@3x.png */; };
+		A74ACA9C210AEBB7001D02ED /* SYAVPlayer_Sound.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA7C210AEBB7001D02ED /* SYAVPlayer_Sound.png */; };
+		A74ACA9D210AEBB7001D02ED /* SYAVPlayer_Sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA7D210AEBB7001D02ED /* SYAVPlayer_Sound@2x.png */; };
+		A74ACA9E210AEBB7001D02ED /* SYAVPlayer_Sound@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA7E210AEBB7001D02ED /* SYAVPlayer_Sound@3x.png */; };
+		A74ACA9F210AEBB7001D02ED /* SYAVPlayer_Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA7F210AEBB7001D02ED /* SYAVPlayer_Stop.png */; };
+		A74ACAA0210AEBB7001D02ED /* SYAVPlayer_Stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA80210AEBB7001D02ED /* SYAVPlayer_Stop@2x.png */; };
+		A74ACAA1210AEBB7001D02ED /* SYAVPlayer_Stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA81210AEBB7001D02ED /* SYAVPlayer_Stop@3x.png */; };
+		A74ACAA2210AEBB7001D02ED /* SYAVPlayer_Zoomin.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA82210AEBB7001D02ED /* SYAVPlayer_Zoomin.png */; };
+		A74ACAA3210AEBB7001D02ED /* SYAVPlayer_Zoomin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA83210AEBB7001D02ED /* SYAVPlayer_Zoomin@2x.png */; };
+		A74ACAA4210AEBB7001D02ED /* SYAVPlayer_Zoomin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA84210AEBB7001D02ED /* SYAVPlayer_Zoomin@3x.png */; };
+		A74ACAA5210AEBB7001D02ED /* SYAVPlayer_Zoomout.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA85210AEBB7001D02ED /* SYAVPlayer_Zoomout.png */; };
+		A74ACAA6210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA86210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png */; };
+		A74ACAA7210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA87210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png */; };
+		A74ACAA8210AEBB7001D02ED /* SYMPMoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA8A210AEBB7001D02ED /* SYMPMoviePlayer.m */; };
+		A74ACAAF210AF0FF001D02ED /* RecorderImagePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAAE210AF0FF001D02ED /* RecorderImagePickerVC.m */; };
+		A74ACAB2210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */; };
+		A74ACAB5210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */; };
 		A77EC17B1DD2B453006DDBFF /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A77EC17A1DD2B453006DDBFF /* movie.mp4 */; };
 		A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */; };
-		A7DF55D821033FC200B8FEB3 /* AVMoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DF55B621033FC100B8FEB3 /* AVMoviePlayer.m */; };
-		A7DF55D921033FC200B8FEB3 /* AVMoviePlayerActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DF55B821033FC100B8FEB3 /* AVMoviePlayerActionView.m */; };
-		A7DF55DA21033FC200B8FEB3 /* SYAVPlayer_bgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55BB21033FC100B8FEB3 /* SYAVPlayer_bgroundImage.png */; };
-		A7DF55DB21033FC200B8FEB3 /* SYAVPlayer_bgroundImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55BC21033FC100B8FEB3 /* SYAVPlayer_bgroundImage@2x.png */; };
-		A7DF55DC21033FC200B8FEB3 /* SYAVPlayer_bgroundImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55BD21033FC100B8FEB3 /* SYAVPlayer_bgroundImage@3x.png */; };
-		A7DF55DD21033FC200B8FEB3 /* SYAVPlayer_Close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55BE21033FC100B8FEB3 /* SYAVPlayer_Close@2x.png */; };
-		A7DF55DE21033FC200B8FEB3 /* SYAVPlayer_Close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55BF21033FC100B8FEB3 /* SYAVPlayer_Close@3x.png */; };
-		A7DF55DF21033FC200B8FEB3 /* SYAVPlayer_Control.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C021033FC100B8FEB3 /* SYAVPlayer_Control.png */; };
-		A7DF55E021033FC200B8FEB3 /* SYAVPlayer_Control@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C121033FC100B8FEB3 /* SYAVPlayer_Control@2x.png */; };
-		A7DF55E121033FC200B8FEB3 /* SYAVPlayer_Control@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C221033FC100B8FEB3 /* SYAVPlayer_Control@3x.png */; };
-		A7DF55E221033FC200B8FEB3 /* SYAVPlayer_Play.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C321033FC100B8FEB3 /* SYAVPlayer_Play.png */; };
-		A7DF55E321033FC200B8FEB3 /* SYAVPlayer_Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C421033FC100B8FEB3 /* SYAVPlayer_Play@2x.png */; };
-		A7DF55E421033FC200B8FEB3 /* SYAVPlayer_Play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C521033FC100B8FEB3 /* SYAVPlayer_Play@3x.png */; };
-		A7DF55E521033FC200B8FEB3 /* SYAVPlayer_Sound.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C621033FC100B8FEB3 /* SYAVPlayer_Sound.png */; };
-		A7DF55E621033FC200B8FEB3 /* SYAVPlayer_Sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C721033FC100B8FEB3 /* SYAVPlayer_Sound@2x.png */; };
-		A7DF55E721033FC200B8FEB3 /* SYAVPlayer_Sound@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C821033FC100B8FEB3 /* SYAVPlayer_Sound@3x.png */; };
-		A7DF55E821033FC200B8FEB3 /* SYAVPlayer_Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55C921033FC100B8FEB3 /* SYAVPlayer_Stop.png */; };
-		A7DF55E921033FC200B8FEB3 /* SYAVPlayer_Stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55CA21033FC100B8FEB3 /* SYAVPlayer_Stop@2x.png */; };
-		A7DF55EA21033FC200B8FEB3 /* SYAVPlayer_Stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55CB21033FC100B8FEB3 /* SYAVPlayer_Stop@3x.png */; };
-		A7DF55EB21033FC200B8FEB3 /* SYAVPlayer_Zoomin.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55CC21033FC100B8FEB3 /* SYAVPlayer_Zoomin.png */; };
-		A7DF55EC21033FC200B8FEB3 /* SYAVPlayer_Zoomin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55CD21033FC100B8FEB3 /* SYAVPlayer_Zoomin@2x.png */; };
-		A7DF55ED21033FC200B8FEB3 /* SYAVPlayer_Zoomin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55CE21033FC100B8FEB3 /* SYAVPlayer_Zoomin@3x.png */; };
-		A7DF55EE21033FC200B8FEB3 /* SYAVPlayer_Zoomout.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55CF21033FC200B8FEB3 /* SYAVPlayer_Zoomout.png */; };
-		A7DF55EF21033FC200B8FEB3 /* SYAVPlayer_Zoomout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55D021033FC200B8FEB3 /* SYAVPlayer_Zoomout@2x.png */; };
-		A7DF55F021033FC200B8FEB3 /* SYAVPlayer_Zoomout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7DF55D121033FC200B8FEB3 /* SYAVPlayer_Zoomout@3x.png */; };
-		A7DF55F121033FC200B8FEB3 /* AVMoviePlayerStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DF55D321033FC200B8FEB3 /* AVMoviePlayerStatusView.m */; };
-		A7DF55F221033FC200B8FEB3 /* AVMoviePlayerTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DF55D521033FC200B8FEB3 /* AVMoviePlayerTools.m */; };
-		A7DF55F321033FC200B8FEB3 /* AVMoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DF55D721033FC200B8FEB3 /* AVMoviePlayerView.m */; };
-		A7DF55F72103412800B8FEB3 /* SYMPMoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DF55F62103412800B8FEB3 /* SYMPMoviePlayer.m */; };
 		A7EE0FF91DCC8634000262F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0FF81DCC8634000262F1 /* main.m */; };
 		A7EE0FFC1DCC8634000262F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0FFB1DCC8634000262F1 /* AppDelegate.m */; };
 		A7EE0FFF1DCC8634000262F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0FFE1DCC8634000262F1 /* ViewController.m */; };
@@ -68,45 +71,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A74ACA65210AEBB7001D02ED /* SYAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayer.h; sourceTree = "<group>"; };
+		A74ACA66210AEBB7001D02ED /* SYAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayer.m; sourceTree = "<group>"; };
+		A74ACA67210AEBB7001D02ED /* SYAVPlayerActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerActionView.h; sourceTree = "<group>"; };
+		A74ACA68210AEBB7001D02ED /* SYAVPlayerActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerActionView.m; sourceTree = "<group>"; };
+		A74ACA69210AEBB7001D02ED /* SYAVPlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerHeader.h; sourceTree = "<group>"; };
+		A74ACA6A210AEBB7001D02ED /* SYAVPlayerStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerStatusView.h; sourceTree = "<group>"; };
+		A74ACA6B210AEBB7001D02ED /* SYAVPlayerStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerStatusView.m; sourceTree = "<group>"; };
+		A74ACA6C210AEBB7001D02ED /* SYAVPlayerTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerTools.h; sourceTree = "<group>"; };
+		A74ACA6D210AEBB7001D02ED /* SYAVPlayerTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerTools.m; sourceTree = "<group>"; };
+		A74ACA6E210AEBB7001D02ED /* SYAVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerView.h; sourceTree = "<group>"; };
+		A74ACA6F210AEBB7001D02ED /* SYAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerView.m; sourceTree = "<group>"; };
+		A74ACA71210AEBB7001D02ED /* SYAVPlayer_bgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_bgroundImage.png; sourceTree = "<group>"; };
+		A74ACA72210AEBB7001D02ED /* SYAVPlayer_bgroundImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_bgroundImage@2x.png"; sourceTree = "<group>"; };
+		A74ACA73210AEBB7001D02ED /* SYAVPlayer_bgroundImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_bgroundImage@3x.png"; sourceTree = "<group>"; };
+		A74ACA74210AEBB7001D02ED /* SYAVPlayer_Close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Close@2x.png"; sourceTree = "<group>"; };
+		A74ACA75210AEBB7001D02ED /* SYAVPlayer_Close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Close@3x.png"; sourceTree = "<group>"; };
+		A74ACA76210AEBB7001D02ED /* SYAVPlayer_Control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Control.png; sourceTree = "<group>"; };
+		A74ACA77210AEBB7001D02ED /* SYAVPlayer_Control@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Control@2x.png"; sourceTree = "<group>"; };
+		A74ACA78210AEBB7001D02ED /* SYAVPlayer_Control@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Control@3x.png"; sourceTree = "<group>"; };
+		A74ACA79210AEBB7001D02ED /* SYAVPlayer_Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Play.png; sourceTree = "<group>"; };
+		A74ACA7A210AEBB7001D02ED /* SYAVPlayer_Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Play@2x.png"; sourceTree = "<group>"; };
+		A74ACA7B210AEBB7001D02ED /* SYAVPlayer_Play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Play@3x.png"; sourceTree = "<group>"; };
+		A74ACA7C210AEBB7001D02ED /* SYAVPlayer_Sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Sound.png; sourceTree = "<group>"; };
+		A74ACA7D210AEBB7001D02ED /* SYAVPlayer_Sound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Sound@2x.png"; sourceTree = "<group>"; };
+		A74ACA7E210AEBB7001D02ED /* SYAVPlayer_Sound@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Sound@3x.png"; sourceTree = "<group>"; };
+		A74ACA7F210AEBB7001D02ED /* SYAVPlayer_Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Stop.png; sourceTree = "<group>"; };
+		A74ACA80210AEBB7001D02ED /* SYAVPlayer_Stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Stop@2x.png"; sourceTree = "<group>"; };
+		A74ACA81210AEBB7001D02ED /* SYAVPlayer_Stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Stop@3x.png"; sourceTree = "<group>"; };
+		A74ACA82210AEBB7001D02ED /* SYAVPlayer_Zoomin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Zoomin.png; sourceTree = "<group>"; };
+		A74ACA83210AEBB7001D02ED /* SYAVPlayer_Zoomin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomin@2x.png"; sourceTree = "<group>"; };
+		A74ACA84210AEBB7001D02ED /* SYAVPlayer_Zoomin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomin@3x.png"; sourceTree = "<group>"; };
+		A74ACA85210AEBB7001D02ED /* SYAVPlayer_Zoomout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Zoomout.png; sourceTree = "<group>"; };
+		A74ACA86210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomout@2x.png"; sourceTree = "<group>"; };
+		A74ACA87210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomout@3x.png"; sourceTree = "<group>"; };
+		A74ACA89210AEBB7001D02ED /* SYMPMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMPMoviePlayer.h; sourceTree = "<group>"; };
+		A74ACA8A210AEBB7001D02ED /* SYMPMoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPMoviePlayer.m; sourceTree = "<group>"; };
+		A74ACAA9210AEBD2001D02ED /* SYVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideo.h; sourceTree = "<group>"; };
+		A74ACAAA210AEBEE001D02ED /* SYVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideoPlayer.h; sourceTree = "<group>"; };
+		A74ACAAB210AEBFF001D02ED /* SYVideoRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideoRecorder.h; sourceTree = "<group>"; };
+		A74ACAAD210AF0FF001D02ED /* RecorderImagePickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderImagePickerVC.h; sourceTree = "<group>"; };
+		A74ACAAE210AF0FF001D02ED /* RecorderImagePickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderImagePickerVC.m; sourceTree = "<group>"; };
+		A74ACAB0210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderAVCaptureSessionFileOutVC.h; sourceTree = "<group>"; };
+		A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAVCaptureSessionFileOutVC.m; sourceTree = "<group>"; };
+		A74ACAB3210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderAVCaptureSessionWriteVC.h; sourceTree = "<group>"; };
+		A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAVCaptureSessionWriteVC.m; sourceTree = "<group>"; };
 		A77EC17A1DD2B453006DDBFF /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
 		A77EC17D1DD30CCD006DDBFF /* AVPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerVC.h; sourceTree = "<group>"; };
 		A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerVC.m; sourceTree = "<group>"; };
-		A7DF55B521033FC100B8FEB3 /* AVMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayer.h; sourceTree = "<group>"; };
-		A7DF55B621033FC100B8FEB3 /* AVMoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayer.m; sourceTree = "<group>"; };
-		A7DF55B721033FC100B8FEB3 /* AVMoviePlayerActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayerActionView.h; sourceTree = "<group>"; };
-		A7DF55B821033FC100B8FEB3 /* AVMoviePlayerActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayerActionView.m; sourceTree = "<group>"; };
-		A7DF55B921033FC100B8FEB3 /* AVMoviePlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayerHeader.h; sourceTree = "<group>"; };
-		A7DF55BB21033FC100B8FEB3 /* SYAVPlayer_bgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_bgroundImage.png; sourceTree = "<group>"; };
-		A7DF55BC21033FC100B8FEB3 /* SYAVPlayer_bgroundImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_bgroundImage@2x.png"; sourceTree = "<group>"; };
-		A7DF55BD21033FC100B8FEB3 /* SYAVPlayer_bgroundImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_bgroundImage@3x.png"; sourceTree = "<group>"; };
-		A7DF55BE21033FC100B8FEB3 /* SYAVPlayer_Close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Close@2x.png"; sourceTree = "<group>"; };
-		A7DF55BF21033FC100B8FEB3 /* SYAVPlayer_Close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Close@3x.png"; sourceTree = "<group>"; };
-		A7DF55C021033FC100B8FEB3 /* SYAVPlayer_Control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Control.png; sourceTree = "<group>"; };
-		A7DF55C121033FC100B8FEB3 /* SYAVPlayer_Control@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Control@2x.png"; sourceTree = "<group>"; };
-		A7DF55C221033FC100B8FEB3 /* SYAVPlayer_Control@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Control@3x.png"; sourceTree = "<group>"; };
-		A7DF55C321033FC100B8FEB3 /* SYAVPlayer_Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Play.png; sourceTree = "<group>"; };
-		A7DF55C421033FC100B8FEB3 /* SYAVPlayer_Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Play@2x.png"; sourceTree = "<group>"; };
-		A7DF55C521033FC100B8FEB3 /* SYAVPlayer_Play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Play@3x.png"; sourceTree = "<group>"; };
-		A7DF55C621033FC100B8FEB3 /* SYAVPlayer_Sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Sound.png; sourceTree = "<group>"; };
-		A7DF55C721033FC100B8FEB3 /* SYAVPlayer_Sound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Sound@2x.png"; sourceTree = "<group>"; };
-		A7DF55C821033FC100B8FEB3 /* SYAVPlayer_Sound@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Sound@3x.png"; sourceTree = "<group>"; };
-		A7DF55C921033FC100B8FEB3 /* SYAVPlayer_Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Stop.png; sourceTree = "<group>"; };
-		A7DF55CA21033FC100B8FEB3 /* SYAVPlayer_Stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Stop@2x.png"; sourceTree = "<group>"; };
-		A7DF55CB21033FC100B8FEB3 /* SYAVPlayer_Stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Stop@3x.png"; sourceTree = "<group>"; };
-		A7DF55CC21033FC100B8FEB3 /* SYAVPlayer_Zoomin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Zoomin.png; sourceTree = "<group>"; };
-		A7DF55CD21033FC100B8FEB3 /* SYAVPlayer_Zoomin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomin@2x.png"; sourceTree = "<group>"; };
-		A7DF55CE21033FC100B8FEB3 /* SYAVPlayer_Zoomin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomin@3x.png"; sourceTree = "<group>"; };
-		A7DF55CF21033FC200B8FEB3 /* SYAVPlayer_Zoomout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Zoomout.png; sourceTree = "<group>"; };
-		A7DF55D021033FC200B8FEB3 /* SYAVPlayer_Zoomout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomout@2x.png"; sourceTree = "<group>"; };
-		A7DF55D121033FC200B8FEB3 /* SYAVPlayer_Zoomout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomout@3x.png"; sourceTree = "<group>"; };
-		A7DF55D221033FC200B8FEB3 /* AVMoviePlayerStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayerStatusView.h; sourceTree = "<group>"; };
-		A7DF55D321033FC200B8FEB3 /* AVMoviePlayerStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayerStatusView.m; sourceTree = "<group>"; };
-		A7DF55D421033FC200B8FEB3 /* AVMoviePlayerTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayerTools.h; sourceTree = "<group>"; };
-		A7DF55D521033FC200B8FEB3 /* AVMoviePlayerTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayerTools.m; sourceTree = "<group>"; };
-		A7DF55D621033FC200B8FEB3 /* AVMoviePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMoviePlayerView.h; sourceTree = "<group>"; };
-		A7DF55D721033FC200B8FEB3 /* AVMoviePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMoviePlayerView.m; sourceTree = "<group>"; };
-		A7DF55F52103412800B8FEB3 /* SYMPMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMPMoviePlayer.h; sourceTree = "<group>"; };
-		A7DF55F62103412800B8FEB3 /* SYMPMoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPMoviePlayer.m; sourceTree = "<group>"; };
 		A7EE0FF41DCC8634000262F1 /* DemoVideoPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoVideoPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE0FF81DCC8634000262F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7EE0FFA1DCC8634000262F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,74 +165,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A74ACA62210AEBB7001D02ED /* SYVideo */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACA63210AEBB7001D02ED /* SYVideoPlayer */,
+				A74ACA8B210AEBB7001D02ED /* SYVideoRecorder */,
+				A74ACAA9210AEBD2001D02ED /* SYVideo.h */,
+			);
+			name = SYVideo;
+			path = ../../SYVideo;
+			sourceTree = "<group>";
+		};
+		A74ACA63210AEBB7001D02ED /* SYVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACA64210AEBB7001D02ED /* SYAVPlayer */,
+				A74ACA88210AEBB7001D02ED /* SYMPMoviePlayer */,
+				A74ACAAA210AEBEE001D02ED /* SYVideoPlayer.h */,
+			);
+			path = SYVideoPlayer;
+			sourceTree = "<group>";
+		};
+		A74ACA64210AEBB7001D02ED /* SYAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACA65210AEBB7001D02ED /* SYAVPlayer.h */,
+				A74ACA66210AEBB7001D02ED /* SYAVPlayer.m */,
+				A74ACA67210AEBB7001D02ED /* SYAVPlayerActionView.h */,
+				A74ACA68210AEBB7001D02ED /* SYAVPlayerActionView.m */,
+				A74ACA69210AEBB7001D02ED /* SYAVPlayerHeader.h */,
+				A74ACA6A210AEBB7001D02ED /* SYAVPlayerStatusView.h */,
+				A74ACA6B210AEBB7001D02ED /* SYAVPlayerStatusView.m */,
+				A74ACA6C210AEBB7001D02ED /* SYAVPlayerTools.h */,
+				A74ACA6D210AEBB7001D02ED /* SYAVPlayerTools.m */,
+				A74ACA6E210AEBB7001D02ED /* SYAVPlayerView.h */,
+				A74ACA6F210AEBB7001D02ED /* SYAVPlayerView.m */,
+				A74ACA70210AEBB7001D02ED /* SYAVPlayerImages */,
+			);
+			path = SYAVPlayer;
+			sourceTree = "<group>";
+		};
+		A74ACA70210AEBB7001D02ED /* SYAVPlayerImages */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACA71210AEBB7001D02ED /* SYAVPlayer_bgroundImage.png */,
+				A74ACA72210AEBB7001D02ED /* SYAVPlayer_bgroundImage@2x.png */,
+				A74ACA73210AEBB7001D02ED /* SYAVPlayer_bgroundImage@3x.png */,
+				A74ACA74210AEBB7001D02ED /* SYAVPlayer_Close@2x.png */,
+				A74ACA75210AEBB7001D02ED /* SYAVPlayer_Close@3x.png */,
+				A74ACA76210AEBB7001D02ED /* SYAVPlayer_Control.png */,
+				A74ACA77210AEBB7001D02ED /* SYAVPlayer_Control@2x.png */,
+				A74ACA78210AEBB7001D02ED /* SYAVPlayer_Control@3x.png */,
+				A74ACA79210AEBB7001D02ED /* SYAVPlayer_Play.png */,
+				A74ACA7A210AEBB7001D02ED /* SYAVPlayer_Play@2x.png */,
+				A74ACA7B210AEBB7001D02ED /* SYAVPlayer_Play@3x.png */,
+				A74ACA7C210AEBB7001D02ED /* SYAVPlayer_Sound.png */,
+				A74ACA7D210AEBB7001D02ED /* SYAVPlayer_Sound@2x.png */,
+				A74ACA7E210AEBB7001D02ED /* SYAVPlayer_Sound@3x.png */,
+				A74ACA7F210AEBB7001D02ED /* SYAVPlayer_Stop.png */,
+				A74ACA80210AEBB7001D02ED /* SYAVPlayer_Stop@2x.png */,
+				A74ACA81210AEBB7001D02ED /* SYAVPlayer_Stop@3x.png */,
+				A74ACA82210AEBB7001D02ED /* SYAVPlayer_Zoomin.png */,
+				A74ACA83210AEBB7001D02ED /* SYAVPlayer_Zoomin@2x.png */,
+				A74ACA84210AEBB7001D02ED /* SYAVPlayer_Zoomin@3x.png */,
+				A74ACA85210AEBB7001D02ED /* SYAVPlayer_Zoomout.png */,
+				A74ACA86210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png */,
+				A74ACA87210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png */,
+			);
+			path = SYAVPlayerImages;
+			sourceTree = "<group>";
+		};
+		A74ACA88210AEBB7001D02ED /* SYMPMoviePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACA89210AEBB7001D02ED /* SYMPMoviePlayer.h */,
+				A74ACA8A210AEBB7001D02ED /* SYMPMoviePlayer.m */,
+			);
+			path = SYMPMoviePlayer;
+			sourceTree = "<group>";
+		};
+		A74ACA8B210AEBB7001D02ED /* SYVideoRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACAAB210AEBFF001D02ED /* SYVideoRecorder.h */,
+			);
+			path = SYVideoRecorder;
+			sourceTree = "<group>";
+		};
+		A74ACAAC210AF0D6001D02ED /* MovieRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				A74ACAAD210AF0FF001D02ED /* RecorderImagePickerVC.h */,
+				A74ACAAE210AF0FF001D02ED /* RecorderImagePickerVC.m */,
+				A74ACAB0210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.h */,
+				A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */,
+				A74ACAB3210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.h */,
+				A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */,
+			);
+			path = MovieRecorder;
+			sourceTree = "<group>";
+		};
 		A77EC17C1DD2B640006DDBFF /* MPMoviePlayerViewController */ = {
 			isa = PBXGroup;
 			children = (
 				A7EE102A1DCC8AA9000262F1 /* MPMoviePlayerVC.h */,
 				A7EE102B1DCC8AA9000262F1 /* MPMoviePlayerVC.m */,
-				A7DF55F42103412800B8FEB3 /* SYMPMoviePlayer */,
 			);
 			name = MPMoviePlayerViewController;
-			sourceTree = "<group>";
-		};
-		A7DF55B421033FC100B8FEB3 /* SYAVPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				A7DF55B521033FC100B8FEB3 /* AVMoviePlayer.h */,
-				A7DF55B621033FC100B8FEB3 /* AVMoviePlayer.m */,
-				A7DF55B721033FC100B8FEB3 /* AVMoviePlayerActionView.h */,
-				A7DF55B821033FC100B8FEB3 /* AVMoviePlayerActionView.m */,
-				A7DF55B921033FC100B8FEB3 /* AVMoviePlayerHeader.h */,
-				A7DF55BA21033FC100B8FEB3 /* AVMoviePlayerImages */,
-				A7DF55D221033FC200B8FEB3 /* AVMoviePlayerStatusView.h */,
-				A7DF55D321033FC200B8FEB3 /* AVMoviePlayerStatusView.m */,
-				A7DF55D421033FC200B8FEB3 /* AVMoviePlayerTools.h */,
-				A7DF55D521033FC200B8FEB3 /* AVMoviePlayerTools.m */,
-				A7DF55D621033FC200B8FEB3 /* AVMoviePlayerView.h */,
-				A7DF55D721033FC200B8FEB3 /* AVMoviePlayerView.m */,
-			);
-			name = SYAVPlayer;
-			path = ../../SYAVPlayer;
-			sourceTree = "<group>";
-		};
-		A7DF55BA21033FC100B8FEB3 /* AVMoviePlayerImages */ = {
-			isa = PBXGroup;
-			children = (
-				A7DF55BB21033FC100B8FEB3 /* SYAVPlayer_bgroundImage.png */,
-				A7DF55BC21033FC100B8FEB3 /* SYAVPlayer_bgroundImage@2x.png */,
-				A7DF55BD21033FC100B8FEB3 /* SYAVPlayer_bgroundImage@3x.png */,
-				A7DF55BE21033FC100B8FEB3 /* SYAVPlayer_Close@2x.png */,
-				A7DF55BF21033FC100B8FEB3 /* SYAVPlayer_Close@3x.png */,
-				A7DF55C021033FC100B8FEB3 /* SYAVPlayer_Control.png */,
-				A7DF55C121033FC100B8FEB3 /* SYAVPlayer_Control@2x.png */,
-				A7DF55C221033FC100B8FEB3 /* SYAVPlayer_Control@3x.png */,
-				A7DF55C321033FC100B8FEB3 /* SYAVPlayer_Play.png */,
-				A7DF55C421033FC100B8FEB3 /* SYAVPlayer_Play@2x.png */,
-				A7DF55C521033FC100B8FEB3 /* SYAVPlayer_Play@3x.png */,
-				A7DF55C621033FC100B8FEB3 /* SYAVPlayer_Sound.png */,
-				A7DF55C721033FC100B8FEB3 /* SYAVPlayer_Sound@2x.png */,
-				A7DF55C821033FC100B8FEB3 /* SYAVPlayer_Sound@3x.png */,
-				A7DF55C921033FC100B8FEB3 /* SYAVPlayer_Stop.png */,
-				A7DF55CA21033FC100B8FEB3 /* SYAVPlayer_Stop@2x.png */,
-				A7DF55CB21033FC100B8FEB3 /* SYAVPlayer_Stop@3x.png */,
-				A7DF55CC21033FC100B8FEB3 /* SYAVPlayer_Zoomin.png */,
-				A7DF55CD21033FC100B8FEB3 /* SYAVPlayer_Zoomin@2x.png */,
-				A7DF55CE21033FC100B8FEB3 /* SYAVPlayer_Zoomin@3x.png */,
-				A7DF55CF21033FC200B8FEB3 /* SYAVPlayer_Zoomout.png */,
-				A7DF55D021033FC200B8FEB3 /* SYAVPlayer_Zoomout@2x.png */,
-				A7DF55D121033FC200B8FEB3 /* SYAVPlayer_Zoomout@3x.png */,
-			);
-			path = AVMoviePlayerImages;
-			sourceTree = "<group>";
-		};
-		A7DF55F42103412800B8FEB3 /* SYMPMoviePlayer */ = {
-			isa = PBXGroup;
-			children = (
-				A7DF55F52103412800B8FEB3 /* SYMPMoviePlayer.h */,
-				A7DF55F62103412800B8FEB3 /* SYMPMoviePlayer.m */,
-			);
-			name = SYMPMoviePlayer;
-			path = ../../SYMPMoviePlayer;
 			sourceTree = "<group>";
 		};
 		A7EE0FEB1DCC8634000262F1 = {
@@ -250,6 +301,8 @@
 				A7EE0FFB1DCC8634000262F1 /* AppDelegate.m */,
 				A7EE0FFD1DCC8634000262F1 /* ViewController.h */,
 				A7EE0FFE1DCC8634000262F1 /* ViewController.m */,
+				A74ACAAC210AF0D6001D02ED /* MovieRecorder */,
+				A74ACA62210AEBB7001D02ED /* SYVideo */,
 				A7F7C7ED1DD417CB002EBD07 /* AVPlayer */,
 				A77EC17C1DD2B640006DDBFF /* MPMoviePlayerViewController */,
 				A77EC17A1DD2B453006DDBFF /* movie.mp4 */,
@@ -294,7 +347,6 @@
 			children = (
 				A77EC17D1DD30CCD006DDBFF /* AVPlayerVC.h */,
 				A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */,
-				A7DF55B421033FC100B8FEB3 /* SYAVPlayer */,
 			);
 			name = AVPlayer;
 			sourceTree = "<group>";
@@ -402,34 +454,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7DF55ED21033FC200B8FEB3 /* SYAVPlayer_Zoomin@3x.png in Resources */,
-				A7DF55EE21033FC200B8FEB3 /* SYAVPlayer_Zoomout.png in Resources */,
-				A7DF55DE21033FC200B8FEB3 /* SYAVPlayer_Close@3x.png in Resources */,
-				A7DF55EF21033FC200B8FEB3 /* SYAVPlayer_Zoomout@2x.png in Resources */,
+				A74ACAA4210AEBB7001D02ED /* SYAVPlayer_Zoomin@3x.png in Resources */,
+				A74ACAA5210AEBB7001D02ED /* SYAVPlayer_Zoomout.png in Resources */,
+				A74ACA95210AEBB7001D02ED /* SYAVPlayer_Close@3x.png in Resources */,
+				A74ACAA6210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png in Resources */,
 				A77EC17B1DD2B453006DDBFF /* movie.mp4 in Resources */,
-				A7DF55DB21033FC200B8FEB3 /* SYAVPlayer_bgroundImage@2x.png in Resources */,
+				A74ACA92210AEBB7001D02ED /* SYAVPlayer_bgroundImage@2x.png in Resources */,
 				A7EE10071DCC8634000262F1 /* LaunchScreen.storyboard in Resources */,
-				A7DF55E121033FC200B8FEB3 /* SYAVPlayer_Control@3x.png in Resources */,
+				A74ACA98210AEBB7001D02ED /* SYAVPlayer_Control@3x.png in Resources */,
 				A7F7C86D1DD46D1E002EBD07 /* movie02.mov in Resources */,
 				A7EE10041DCC8634000262F1 /* Assets.xcassets in Resources */,
-				A7DF55E021033FC200B8FEB3 /* SYAVPlayer_Control@2x.png in Resources */,
-				A7DF55DD21033FC200B8FEB3 /* SYAVPlayer_Close@2x.png in Resources */,
-				A7DF55E721033FC200B8FEB3 /* SYAVPlayer_Sound@3x.png in Resources */,
-				A7DF55EB21033FC200B8FEB3 /* SYAVPlayer_Zoomin.png in Resources */,
-				A7DF55E421033FC200B8FEB3 /* SYAVPlayer_Play@3x.png in Resources */,
-				A7DF55E821033FC200B8FEB3 /* SYAVPlayer_Stop.png in Resources */,
-				A7DF55E321033FC200B8FEB3 /* SYAVPlayer_Play@2x.png in Resources */,
-				A7DF55E921033FC200B8FEB3 /* SYAVPlayer_Stop@2x.png in Resources */,
-				A7DF55E221033FC200B8FEB3 /* SYAVPlayer_Play.png in Resources */,
-				A7DF55EC21033FC200B8FEB3 /* SYAVPlayer_Zoomin@2x.png in Resources */,
-				A7DF55EA21033FC200B8FEB3 /* SYAVPlayer_Stop@3x.png in Resources */,
+				A74ACA97210AEBB7001D02ED /* SYAVPlayer_Control@2x.png in Resources */,
+				A74ACA94210AEBB7001D02ED /* SYAVPlayer_Close@2x.png in Resources */,
+				A74ACA9E210AEBB7001D02ED /* SYAVPlayer_Sound@3x.png in Resources */,
+				A74ACAA2210AEBB7001D02ED /* SYAVPlayer_Zoomin.png in Resources */,
+				A74ACA9B210AEBB7001D02ED /* SYAVPlayer_Play@3x.png in Resources */,
+				A74ACA9F210AEBB7001D02ED /* SYAVPlayer_Stop.png in Resources */,
+				A74ACA9A210AEBB7001D02ED /* SYAVPlayer_Play@2x.png in Resources */,
+				A74ACAA0210AEBB7001D02ED /* SYAVPlayer_Stop@2x.png in Resources */,
+				A74ACA99210AEBB7001D02ED /* SYAVPlayer_Play.png in Resources */,
+				A74ACAA3210AEBB7001D02ED /* SYAVPlayer_Zoomin@2x.png in Resources */,
+				A74ACAA1210AEBB7001D02ED /* SYAVPlayer_Stop@3x.png in Resources */,
 				A7EE10021DCC8634000262F1 /* Main.storyboard in Resources */,
-				A7DF55E521033FC200B8FEB3 /* SYAVPlayer_Sound.png in Resources */,
-				A7DF55F021033FC200B8FEB3 /* SYAVPlayer_Zoomout@3x.png in Resources */,
-				A7DF55DF21033FC200B8FEB3 /* SYAVPlayer_Control.png in Resources */,
-				A7DF55DA21033FC200B8FEB3 /* SYAVPlayer_bgroundImage.png in Resources */,
-				A7DF55E621033FC200B8FEB3 /* SYAVPlayer_Sound@2x.png in Resources */,
-				A7DF55DC21033FC200B8FEB3 /* SYAVPlayer_bgroundImage@3x.png in Resources */,
+				A74ACA9C210AEBB7001D02ED /* SYAVPlayer_Sound.png in Resources */,
+				A74ACAA7210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png in Resources */,
+				A74ACA96210AEBB7001D02ED /* SYAVPlayer_Control.png in Resources */,
+				A74ACA91210AEBB7001D02ED /* SYAVPlayer_bgroundImage.png in Resources */,
+				A74ACA9D210AEBB7001D02ED /* SYAVPlayer_Sound@2x.png in Resources */,
+				A74ACA93210AEBB7001D02ED /* SYAVPlayer_bgroundImage@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,16 +507,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EE0FFF1DCC8634000262F1 /* ViewController.m in Sources */,
-				A7DF55F72103412800B8FEB3 /* SYMPMoviePlayer.m in Sources */,
-				A7DF55D921033FC200B8FEB3 /* AVMoviePlayerActionView.m in Sources */,
-				A7DF55F321033FC200B8FEB3 /* AVMoviePlayerView.m in Sources */,
-				A7DF55F221033FC200B8FEB3 /* AVMoviePlayerTools.m in Sources */,
+				A74ACAA8210AEBB7001D02ED /* SYMPMoviePlayer.m in Sources */,
+				A74ACA8F210AEBB7001D02ED /* SYAVPlayerTools.m in Sources */,
+				A74ACAB2210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m in Sources */,
+				A74ACA8D210AEBB7001D02ED /* SYAVPlayerActionView.m in Sources */,
 				A7EE102C1DCC8AA9000262F1 /* MPMoviePlayerVC.m in Sources */,
+				A74ACA8C210AEBB7001D02ED /* SYAVPlayer.m in Sources */,
 				A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */,
-				A7DF55D821033FC200B8FEB3 /* AVMoviePlayer.m in Sources */,
 				A7EE0FFC1DCC8634000262F1 /* AppDelegate.m in Sources */,
+				A74ACA90210AEBB7001D02ED /* SYAVPlayerView.m in Sources */,
 				A7EE0FF91DCC8634000262F1 /* main.m in Sources */,
-				A7DF55F121033FC200B8FEB3 /* AVMoviePlayerStatusView.m in Sources */,
+				A74ACAAF210AF0FF001D02ED /* RecorderImagePickerVC.m in Sources */,
+				A74ACAB5210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m in Sources */,
+				A74ACA8E210AEBB7001D02ED /* SYAVPlayerStatusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -593,7 +648,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -606,7 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DemoVideoPlay/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zsy.DemoVideoPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,7 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DemoVideoPlay/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zsy.DemoVideoPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";

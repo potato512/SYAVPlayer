@@ -1,5 +1,5 @@
 //
-//  AVMoviePlayerHeader.h
+//  SYAVPlayerHeader.h
 //  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
@@ -10,8 +10,7 @@
 #define AVMoviePlayerHeader_h
 
 #import "AppDelegate.h"
-#import "AVMoviePlayerTools.h"
-
+#import "SYAVPlayerTools.h"
 
 #define SYAVPlayerDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define SYAVPlayerSelfWeak __weak typeof(self) SYAVPlayerWeakSelf = self

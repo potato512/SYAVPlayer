@@ -7,8 +7,9 @@
 //
 
 #import "MPMoviePlayerVC.h"
+
 // 导入封装方法头文件
-#import "SYMPMoviePlayer.h"
+#import"SYVideo.h"
 
 @interface MPMoviePlayerVC ()
 

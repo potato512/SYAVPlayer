@@ -1,6 +1,6 @@
 //
-//  AVMoviePlayerTools.h
-//  DemoVideoPlay
+//  SYAVPlayerTools.h
+//  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AVMoviePlayerTools : NSObject
+@interface SYAVPlayerTools : NSObject
 
 /**
  *  时间格式转换（秒数转换成时间字符串）

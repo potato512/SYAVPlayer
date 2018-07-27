@@ -1,6 +1,6 @@
 //
-//  AVMoviePlayerActionView.h
-//  DemoVideoPlay
+//  SYAVPlayerActionView.h
+//  zhangshaoyu
 //
 //  Created by zhangshaoyu on 16/11/10.
 //  Copyright © 2016年 zhangshaoyu. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AVMoviePlayerActionView : UIView
+@interface SYAVPlayerActionView : UIView
 
 /// 标题
 @property (nonatomic, strong) UILabel *titleLabel;
