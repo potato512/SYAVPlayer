@@ -1,0 +1,22 @@
+PODS:
+  - PLPlayerKit (3.4.0):
+    - PLPlayerKit/iphoneos (= 3.4.0)
+  - PLPlayerKit/iphoneos (3.4.0)
+  - SYCacheFileViewController (1.2.3)
+
+DEPENDENCIES:
+  - PLPlayerKit
+  - SYCacheFileViewController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PLPlayerKit
+    - SYCacheFileViewController
+
+SPEC CHECKSUMS:
+  PLPlayerKit: e6ad0e14a1c49db4befab201c2701d26489314e8
+  SYCacheFileViewController: 6f7842e55642f58318c5e86e900a446a67c4898a
+
+PODFILE CHECKSUM: edeefedf8d4f79896c1e2f890f878186e5a09c66
+
+COCOAPODS: 1.6.0.beta.2
