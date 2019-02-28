@@ -7,7 +7,7 @@
 //
 
 #import "SYAVPlayer.h"
-#import "SYMPMoviePlayer.h"
+#import "SYAVPlayerController.h"
 
 #ifndef SYVideoPlayer_h
 #define SYVideoPlayer_h

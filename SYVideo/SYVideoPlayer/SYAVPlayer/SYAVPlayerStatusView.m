@@ -16,9 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    
-    if (self)
-    {
+    if (self) {
         CGRect rect = self.frame;
         rect.size.height = heightStatusView;
         self.frame = rect;
@@ -31,6 +29,11 @@
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    NSLog(@"释放了 %@~", self.class);
 }
 
 #pragma mark - 视图
@@ -102,8 +105,7 @@
 
 - (UIButton *)playButton
 {
-    if (_playButton == nil)
-    {
+    if (_playButton == nil) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
         _playButton.backgroundColor = [UIColor clearColor];
@@ -116,8 +118,7 @@
 
 - (UILabel *)currentTimeLabel
 {
-    if (_currentTimeLabel == nil)
-    {
+    if (_currentTimeLabel == nil) {
         _currentTimeLabel = [[UILabel alloc] init];
         
         _currentTimeLabel.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.1];
@@ -131,8 +132,7 @@
 
 - (UISlider *)progressSlider
 {
-    if (_progressSlider == nil)
-    {
+    if (_progressSlider == nil) {
         _progressSlider = [[UISlider alloc] init];
         
         _progressSlider.continuous = true;
@@ -144,8 +144,7 @@
 
 - (UILabel *)remainsTimeLabel
 {
-    if (_remainsTimeLabel == nil)
-    {
+    if (_remainsTimeLabel == nil) {
         _remainsTimeLabel = [[UILabel alloc] init];
         
         _remainsTimeLabel.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.1];
@@ -159,8 +158,7 @@
 
 - (UIButton *)scaleButton
 {
-    if (!_scaleButton)
-    {
+    if (!_scaleButton) {
         _scaleButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
         _scaleButton.backgroundColor = [UIColor clearColor];

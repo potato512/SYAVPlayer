@@ -17,14 +17,18 @@
 {
     self = [super initWithFrame:frame];
     
-    if (self)
-    {
+    if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.autoresizesSubviews = YES;
         [self setUI];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    NSLog(@"释放了 %@~", self.class);
 }
 
 #pragma mark - 视图
@@ -51,8 +55,7 @@
 
 - (UILabel *)titleLabel
 {
-    if (_titleLabel == nil)
-    {
+    if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(originX, originY, (CGRectGetWidth(self.bounds) - originX * 2), 40.0)];
         
         _titleLabel = [[UILabel alloc] init];
@@ -69,8 +72,7 @@
 
 - (UILabel *)networkLabel
 {
-    if (_networkLabel == nil)
-    {
+    if (_networkLabel == nil) {
         _networkLabel = [[UILabel alloc] init];
         
         _networkLabel.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
@@ -84,8 +86,7 @@
 
 - (UIActivityIndicatorView *)cacheView
 {
-    if (_cacheView == nil)
-    {
+    if (_cacheView == nil) {
         _cacheView = [[UIActivityIndicatorView alloc] init];
         _cacheView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
         _cacheView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
@@ -96,8 +97,7 @@
 
 - (UIButton *)playButton
 {
-    if (_playButton == nil)
-    {
+    if (_playButton == nil) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
         _playButton.backgroundColor = [UIColor clearColor];

@@ -12,11 +12,10 @@
 
 // 播放器
 @property (nonatomic, strong) NSURL *playerUrl; // 视频地址
-@property (nonatomic, assign) BOOL isNetwork;   // 区分网络视频，或本地视频
 
-@property (nonatomic, strong) AVPlayerItem *playerItem;   // 播放对象
+//@property (nonatomic, strong) AVPlayerItem *playerItem;   // 播放对象
 @property (nonatomic, strong) AVPlayer *player;           // 播放本地视频
-@property (nonatomic, strong) AVPlayerLayer *playerLayer; // 播放视频层
+//@property (nonatomic, strong) AVPlayerLayer *playerLayer; // 播放视频层
 
 /// 视频播放前的背景图标
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -40,8 +39,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         self.autoresizesSubviews = YES;
         [self setUI];
         
@@ -56,9 +54,16 @@
 
 - (void)dealloc
 {
+    NSLog(@"释放了 %@~", self.class);
+}
+
+
+- (void)releasePlayer
+{
     [self removeNotification];
     [self removeKVO];
     [self removeTimerObserver];
+    [self stopTimer];
 }
 
 #pragma mark - 视图
@@ -77,15 +82,14 @@
 {
     button.selected = !button.selected;
     
-    [self playLocalMovie];
+    [self playMovie];
     
     [self showInfoUIStart:button.selected];
 }
 
 - (void)scaleMovie:(UIButton *)button
 {
-    if (self.scaleClick)
-    {
+    if (self.scaleClick) {
         button.selected = !button.selected;
         self.frame = (button.selected ? CGRectZero : self.superview.bounds);
         self.scaleClick(button.selected);
@@ -107,8 +111,7 @@
     NSLog(@"slider 开始拖动");
     
     [self removeTimerObserver];
-    if (self.player.rate == 1.0)
-    {
+    if (self.player.rate == 1.0) {
         // 如果拖动进度条时，正在播放，则先停止播放，同时移除时间观察者
         self.isSliderDraging = YES;
         [self.player pause];
@@ -120,8 +123,7 @@
     NSLog(@"slider 结束拖动");
     
     [self addTimerObserver];
-    if (self.isSliderDraging)
-    {
+    if (self.isSliderDraging) {
         self.isSliderDraging = NO;
         [self.player play];
     }
@@ -132,11 +134,11 @@
 - (void)showInfoUIWithTimer
 {
     NSLog(@"self.showInfoTime = %@", @(self.showInfoTime));
-    if (delayTime <= self.showInfoTime)
-    {
+    if (delayTime <= self.showInfoTime) {
         // 隐藏操作视图，且关闭定时器
         [self showInfoUI];
-        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+//        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+        [self stopTimer];
     }
     
     self.showInfoTime++;
@@ -144,18 +146,17 @@
 
 - (void)showInfoUIStart:(BOOL)isStart
 {
-    if (isStart)
-    {
+    if (isStart) {
         // 正在播放，自动隐藏操作视图
         // 启动定时器
         self.showInfoTime = 0.0;
-        [self.showInfoTimer setFireDate:[NSDate distantPast]];
-    }
-    else
-    {
+//        [self.showInfoTimer setFireDate:[NSDate distantPast]];
+        [self startTimer];
+    } else {
         // 停止播放，不隐藏操作视图
         // 关闭定时器
-        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+//        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+        [self stopTimer];
     }
 }
 
@@ -164,8 +165,7 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
     // 若为UITableViewCellContentView（即点击了slider），则不截获Touch事件
-    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UISlider"])
-    {
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UISlider"]) {
         return NO;
     }
     
@@ -227,7 +227,6 @@
 - (void)playJumpNotification:(NSNotification *)notification
 {
     NSLog(@"播放跳跃");
-    
 }
 
 - (void)playBackStalledNotification:(NSNotification *)notification
@@ -238,7 +237,6 @@
 - (void)playEnterBgroundNotification:(NSNotification *)notification
 {
     NSLog(@"播放进入后台");
-    
 }
 
 #pragma mark KVO
@@ -246,7 +244,7 @@
 - (void)addKVO
 {
     // 监控状态属性，获取播放状态
-    [self.playerItem addObserver:self forKeyPath:SYAVPlayerStatus options:NSKeyValueObservingOptionNew context:nil];
+    [self.player.currentItem addObserver:self forKeyPath:SYAVPlayerStatus options:NSKeyValueObservingOptionNew context:nil];
     // 监控网络加载情况
 //    [self.playerItem addObserver:self forKeyPath:playerNetwork options:NSKeyValueObservingOptionNew context:nil];
 //    [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
@@ -255,50 +253,37 @@
 
 - (void)removeKVO
 {
-    [self.playerItem removeObserver:self forKeyPath:SYAVPlayerStatus];
+    [self.player.currentItem removeObserver:self forKeyPath:SYAVPlayerStatus];
 //    [self.playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
 //    [self.playerItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
 }
 
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSString*, id> *)change context:(nullable void *)context
 {
-    if ([keyPath isEqualToString:SYAVPlayerStatus])
-    {
-        AVPlayerItemStatus status = self.playerItem.status;
-        switch (status)
-        {
-            case AVPlayerItemStatusReadyToPlay:
-            {
+    if ([keyPath isEqualToString:SYAVPlayerStatus]) {
+        AVPlayerItemStatus status = self.player.currentItem.status;
+        switch (status) {
+            case AVPlayerItemStatusReadyToPlay: {
                 NSLog(@"AVPlayerItemStatusReadyToPlay");
                 
                 // 设置播放前的状态
                 NSTimeInterval current = CMTimeGetSeconds(self.player.currentTime);
                 self.playerTotalTime = CMTimeGetSeconds(self.player.currentItem.duration);
                 [self refreshPlayerUIWithTime:current totalTime:self.playerTotalTime slider:YES];
-            }
-                break;
-            case AVPlayerItemStatusUnknown:
-            {
+            } break;
+            case AVPlayerItemStatusUnknown: {
                 NSLog(@"AVPlayerItemStatusUnknown");
-            }
-                break;
-            case AVPlayerItemStatusFailed:
-            {
+            } break;
+            case AVPlayerItemStatusFailed: {
                 NSLog(@"AVPlayerItemStatusFailed");
-                NSLog(@"%@", self.playerItem.error);
-            }
-                break;
+                NSLog(@"%@", self.player.currentItem.error);
+            } break;
                 
-            default:
-                break;
+            default: break;
         }
-    }
-    else if ([keyPath isEqualToString:@"loadedTimeRanges"])
-    {
+    } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
         
-    }
-    else if ([keyPath isEqualToString:@"playbackBufferEmpty"])
-    {
+    } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) {
         
     }
 }
@@ -330,12 +315,16 @@
 - (void)setPlayerUI
 {
     NSAssert(_videoUrl != nil, @"视频地址不能为空!");
-
-    self.playerLayer.frame = self.bounds;
-    [self.layer addSublayer:self.playerLayer];
-    
+    //
+    AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithURL:self.playerUrl];
+    self.player = [AVPlayer playerWithPlayerItem:playerItem];
+    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+    playerLayer.frame = self.bounds;
+    [self.layer addSublayer:playerLayer];
+    //
     [self refresuPlayerUI];
-    
+    //
     [self bringSubviewToFront:self.playerView];
 }
 
@@ -365,27 +354,18 @@
     // 播放进度
     float progress = currentTime / totalTime;
     self.playerView.progressView.progress = progress;
-    if (isSlider)
-    {
+    if (isSlider) {
         // 拖动slider时，不需要改变；只有播放时才需要改变
         self.playerView.playerStatusView.progressSlider.value = progress;
     }
 }
 
-- (void)playNetworkMovie
+- (void)playMovie
 {
-    
-}
-
-- (void)playLocalMovie
-{
-    if (self.player.rate == 0.0)
-    {
+    if (self.player.rate == 0.0) {
         // 暂停时，继续播放
         [self.player play];
-    }
-    else if (self.player.rate == 1.0)
-    {
+    } else if (self.player.rate == 1.0) {
         // 正在播放时，暂停
         [self.player pause];
     }
@@ -396,14 +376,14 @@
 - (void)setVideoUrl:(NSString *)videoUrl
 {
     _videoUrl = videoUrl;
+    self.playerUrl = [SYAVPlayerTools playerUrl:_videoUrl];
     [self setPlayerUI];
 }
 
 - (void)setVideoTitle:(NSString *)videoTitle
 {
     _videoTitle = videoTitle;
-    if (_videoTitle && 0 != _videoTitle.length)
-    {
+    if (_videoTitle && 0 != _videoTitle.length) {
         self.playerView.playerActionView.titleLabel.text = _videoTitle;
     }
 }
@@ -413,76 +393,41 @@
 
 #pragma mark 播放
 
-- (NSURL *)playerUrl
-{
-    if ([self.videoUrl hasPrefix:@"http://"] || [self.videoUrl hasPrefix:@"https://"])
-    {
-        // 网络视频
-        NSString *urlStr = [self.videoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSURL *url = [NSURL URLWithString:urlStr];
-        return url;
-    }
-
-    // 本地视频
-    if ([[NSFileManager defaultManager] fileExistsAtPath:self.videoUrl])
-    {
-        NSURL *url = [NSURL fileURLWithPath:self.videoUrl];
-        return url;
-    }
-    return nil;
-}
-
-- (BOOL)isNetwork
-{
-    if ([self.videoUrl hasPrefix:@"http://"] || [self.videoUrl hasPrefix:@"https://"])
-    {
-        // 网络视频
-        return YES;
-    }
-
-    // 本地视频
-    return NO;
-}
-
-- (AVPlayerItem *)playerItem
-{
-    if (_playerItem == nil)
-    {
-        _playerItem = [[AVPlayerItem alloc] initWithURL:self.playerUrl];
-    }
-    
-    return _playerItem;
-}
-
-- (AVPlayer *)player
-{
-    if (_player == nil)
-    {
-        _player = [AVPlayer playerWithPlayerItem:self.playerItem];
-    }
-    
-    return _player;
-}
-
-- (AVPlayerLayer *)playerLayer
-{
-    if (_playerLayer == nil)
-    {
-        _playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-        
-        // 视频填充模式
-        _playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-    }
-    
-    return _playerLayer;
-}
+//- (AVPlayerItem *)playerItem
+//{
+//    if (_playerItem == nil) {
+//        _playerItem = [[AVPlayerItem alloc] initWithURL:self.playerUrl];
+//    }
+//
+//    return _playerItem;
+//}
+//
+//- (AVPlayer *)player
+//{
+//    if (_player == nil)  {
+//        _player = [AVPlayer playerWithPlayerItem:self.playerItem];
+//    }
+//
+//    return _player;
+//}
+//
+//- (AVPlayerLayer *)playerLayer
+//{
+//    if (_playerLayer == nil) {
+//        _playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+//
+//        // 视频填充模式
+//        _playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+//    }
+//
+//    return _playerLayer;
+//}
 
 #pragma mark 视图
 
 - (UIImageView *)backgroundImageView
 {
-    if (_backgroundImageView == nil)
-    {
+    if (_backgroundImageView == nil) {
         _backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -496,8 +441,7 @@
 
 - (SYAVPlayerView *)playerView
 {
-    if (_playerView == nil)
-    {
+    if (_playerView == nil) {
         _playerView = [[SYAVPlayerView alloc] initWithFrame:self.bounds];
         
         [_playerView.playerActionView.playButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
@@ -513,18 +457,37 @@
     return _playerView;
 }
 
-#pragma mark timer
+#pragma mark - timer
 
-- (NSTimer *)showInfoTimer
+- (void)startTimer
 {
-    if (_showInfoTimer == nil)
-    {
-        _showInfoTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showInfoUIWithTimer) userInfo:nil repeats:YES];
+    if (self.showInfoTimer == nil) {
+        self.showInfoTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showInfoUIWithTimer) userInfo:nil repeats:YES];
         // 关闭定时器方法
-        [_showInfoTimer setFireDate:[NSDate distantFuture]];
+        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
     }
     
-    return _showInfoTimer;
+    // 启动定时器
+    [self.showInfoTimer setFireDate:[NSDate distantPast]];
 }
+
+- (void)stopTimer
+{
+    if (self.showInfoTimer.isValid) {
+        // 关闭定时器
+        [self.showInfoTimer setFireDate:[NSDate distantFuture]];
+    }
+}
+
+//- (NSTimer *)showInfoTimer
+//{
+//    if (_showInfoTimer == nil) {
+//        _showInfoTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showInfoUIWithTimer) userInfo:nil repeats:YES];
+//        // 关闭定时器方法
+//        [_showInfoTimer setFireDate:[NSDate distantFuture]];
+//    }
+//
+//    return _showInfoTimer;
+//}
 
 @end

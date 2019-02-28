@@ -20,4 +20,10 @@
  */
 + (NSString *)timeStringWithSecond:(NSTimeInterval)second prefix:(NSString *)prefix;
 
+#pragma mark - 播放地址
+
++ (NSURL *)playerUrl:(NSString *)url;
+
++ (BOOL)isNetworkUrl:(NSString *)url;
+
 @end

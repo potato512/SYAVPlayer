@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "MPMoviePlayerVC.h"
 #import "AVPlayerVC.h"
+#import "AVPlayerControllerVC.h"
+
 #import "RecorderImagePickerVC.h"
 #import "RecorderAVCaptureSessionFileOutVC.h"
 #import "RecorderAVCaptureSessionWriteVC.h"
@@ -39,9 +40,7 @@
 {
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
-    {
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         [self setEdgesForExtendedLayout:UIRectEdgeNone];
     }
 }
@@ -63,9 +62,8 @@
 
 - (NSArray *)mainArray
 {
-    if (_mainArray == nil)
-    {
-        _mainArray = @[@"MPMoviePlayerViewController", @"AVPlayer", @"UIImagePickerController 录像", @"AVCaptureSession+AVCaptureMovieFileOutput 录像", @"AVCaptureSession+AVAssetWriter 录像"];
+    if (_mainArray == nil) {
+        _mainArray = @[@"AVPlayer", @"AVPlayerViewController", @"UIImagePickerController 录像", @"AVCaptureSession+AVCaptureMovieFileOutput 录像", @"AVCaptureSession+AVAssetWriter 录像"];
     }
     
     return _mainArray;
@@ -81,8 +79,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     }
     
@@ -97,10 +94,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (0 == indexPath.row) {
-        MPMoviePlayerVC *nextVC = [[MPMoviePlayerVC alloc] init];
+        AVPlayerVC *nextVC = [[AVPlayerVC alloc] init];
         [self.navigationController pushViewController:nextVC animated:YES];
     } else if (1 == indexPath.row) {
-        AVPlayerVC *nextVC = [[AVPlayerVC alloc] init];
+        AVPlayerControllerVC *nextVC = [[AVPlayerControllerVC alloc] init];
         [self.navigationController pushViewController:nextVC animated:YES];
     } else if (2 == indexPath.row) {
         RecorderImagePickerVC *nextVC = [[RecorderImagePickerVC alloc] init];

@@ -71,4 +71,35 @@
     return [NSString stringWithFormat:@"%@%@:%@:%@", prefix, strHour, strMinute, strSecond];
 }
 
+#pragma mark - 播放地址
+
++ (NSURL *)playerUrl:(NSString *)url
+{
+    if ([self isNetworkUrl:url]) {
+        // 网络视频
+        NSString *urlStr = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *result = [NSURL URLWithString:urlStr];
+        return result;
+    } else {
+        // 本地视频
+        if ([[NSFileManager defaultManager] fileExistsAtPath:url])
+        {
+            NSURL *result = [NSURL fileURLWithPath:url];
+            return result;
+        }
+    }
+    return nil;
+}
+
++ (BOOL)isNetworkUrl:(NSString *)url
+{
+    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
+        // 网络视频
+        return YES;
+    }
+    
+    // 本地视频
+    return NO;
+}
+
 @end

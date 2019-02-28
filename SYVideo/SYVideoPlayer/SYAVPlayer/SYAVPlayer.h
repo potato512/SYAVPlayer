@@ -37,6 +37,8 @@
 /// 从后台返回（重新播放，并且从上次暂停播放的进度开始播放）
 @property (nonatomic, assign) BOOL isBecomeActivePlayerStart;
 
+- (void)releasePlayer;
+
 @end
 
 /*
@@ -54,7 +56,7 @@
  NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"movie02" ofType:@"mov"];
  // NSString *urlStr = @"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8";
  CGRect rect = CGRectMake(10.0, 10.0, (self.view.bounds.size.width - 10.0 * 2), 200.0);
- AVMoviePlayer *player = [[AVMoviePlayer alloc] initWithFrame:rect];
+ SYAVPlayer *player = [[SYAVPlayer alloc] initWithFrame:rect];
  [self.view addSubview:player];
  player.videoUrl = urlStr;
  player.videoTitle = @"本地视频";

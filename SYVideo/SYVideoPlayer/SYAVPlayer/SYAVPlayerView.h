@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SYAVPlayerActionView.h"
 #import "SYAVPlayerStatusView.h"
+#import "SYAVPlayerProgressView.h"
 
 @interface SYAVPlayerView : UIView
 
@@ -22,6 +23,6 @@
 @property (nonatomic, strong) SYAVPlayerStatusView *playerStatusView;
 
 /// 播放进度
-@property (nonatomic, strong) UIProgressView *progressView;
+@property (nonatomic, strong) SYAVPlayerProgressView *progressView;
 
 @end

@@ -1,25 +1,23 @@
 //
-//  AVPlayerVC.m
+//  AVPlayerControllerVC.m
 //  DemoVideoPlay
 //
-//  Created by zhangshaoyu on 16/11/9.
-//  Copyright © 2016年 zhangshaoyu. All rights reserved.
+//  Created by zhangshaoyu on 2019/2/27.
+//  Copyright © 2019年 zhangshaoyu. All rights reserved.
 //
 
-#import "AVPlayerVC.h"
-
-// 导入头文件
+#import "AVPlayerControllerVC.h"
+// 导入封装方法头文件
 #import"SYVideo.h"
 
-@interface AVPlayerVC ()
-
-@property (nonatomic, strong) SYAVPlayer *player;
+@interface AVPlayerControllerVC ()
 
 @end
 
-@implementation AVPlayerVC
+@implementation AVPlayerControllerVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
@@ -29,7 +27,8 @@
     self.navigationItem.titleView = segment;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -38,20 +37,13 @@
 {
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         [self setEdgesForExtendedLayout:UIRectEdgeNone];
     }
 }
 
-#pragma mark - 未封装使用
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    if (self.player) {
-        [self.player releasePlayer];
-    }
+- (void)dealloc{
     NSLog(@"释放了 %@~", self.class);
 }
 
@@ -64,21 +56,10 @@
     if (button.selectedSegmentIndex == 1) {
         moviePath = @"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8";
     }
-    
-    CGRect rect = CGRectMake(10.0, 10.0, (self.view.bounds.size.width - 10.0 * 2), 200.0);
-    self.player = [[SYAVPlayer alloc] initWithFrame:rect];
-    [self.view addSubview:self.player];
-    self.player.videoUrl = moviePath;
-    self.player.videoTitle = @"本地视频";
-    self.player.playerView.viewType = SYAVPlayerStatusViewTypeBottom;
-//    player.playerView.playerStatusView.scaleButton.hidden = YES;
-    SYAVPlayerSelfWeak;
-    self.player.scaleClick = ^(BOOL isFullScreen){
-        SYAVPlayerDelegate.allowRotation = isFullScreen;
-        [SYAVPlayerWeakSelf.navigationController setNavigationBarHidden:isFullScreen animated:YES];
-    };
+
+    SYAVPlayerController *player = [[SYAVPlayerController alloc] init];
+    [player playWithFilePath:moviePath target:self];
     
 }
-
 
 @end

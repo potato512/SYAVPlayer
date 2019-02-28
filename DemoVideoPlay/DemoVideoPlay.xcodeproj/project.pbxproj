@@ -35,10 +35,10 @@
 		A74ACAA5210AEBB7001D02ED /* SYAVPlayer_Zoomout.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA85210AEBB7001D02ED /* SYAVPlayer_Zoomout.png */; };
 		A74ACAA6210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA86210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png */; };
 		A74ACAA7210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A74ACA87210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png */; };
-		A74ACAA8210AEBB7001D02ED /* SYMPMoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA8A210AEBB7001D02ED /* SYMPMoviePlayer.m */; };
 		A74ACAAF210AF0FF001D02ED /* RecorderImagePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAAE210AF0FF001D02ED /* RecorderImagePickerVC.m */; };
 		A74ACAB2210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */; };
 		A74ACAB5210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */; };
+		A75B3E042227E6C500F0AB45 /* SYAVPlayerProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B3E032227E6C500F0AB45 /* SYAVPlayerProgressView.m */; };
 		A77EC17B1DD2B453006DDBFF /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A77EC17A1DD2B453006DDBFF /* movie.mp4 */; };
 		A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */; };
 		A7EE0FF91DCC8634000262F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0FF81DCC8634000262F1 /* main.m */; };
@@ -49,8 +49,9 @@
 		A7EE10071DCC8634000262F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EE10051DCC8634000262F1 /* LaunchScreen.storyboard */; };
 		A7EE10121DCC8635000262F1 /* DemoVideoPlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE10111DCC8635000262F1 /* DemoVideoPlayTests.m */; };
 		A7EE101D1DCC8635000262F1 /* DemoVideoPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE101C1DCC8635000262F1 /* DemoVideoPlayUITests.m */; };
-		A7EE102C1DCC8AA9000262F1 /* MPMoviePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EE102B1DCC8AA9000262F1 /* MPMoviePlayerVC.m */; };
 		A7F7C86D1DD46D1E002EBD07 /* movie02.mov in Resources */ = {isa = PBXBuildFile; fileRef = A7F7C86C1DD46D1E002EBD07 /* movie02.mov */; };
+		A7F92628222662750081DC8A /* SYAVPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F92627222662750081DC8A /* SYAVPlayerController.m */; };
+		A7F9262B222663BC0081DC8A /* AVPlayerControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F9262A222663BC0081DC8A /* AVPlayerControllerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +106,6 @@
 		A74ACA85210AEBB7001D02ED /* SYAVPlayer_Zoomout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SYAVPlayer_Zoomout.png; sourceTree = "<group>"; };
 		A74ACA86210AEBB7001D02ED /* SYAVPlayer_Zoomout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomout@2x.png"; sourceTree = "<group>"; };
 		A74ACA87210AEBB7001D02ED /* SYAVPlayer_Zoomout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SYAVPlayer_Zoomout@3x.png"; sourceTree = "<group>"; };
-		A74ACA89210AEBB7001D02ED /* SYMPMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMPMoviePlayer.h; sourceTree = "<group>"; };
-		A74ACA8A210AEBB7001D02ED /* SYMPMoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPMoviePlayer.m; sourceTree = "<group>"; };
 		A74ACAA9210AEBD2001D02ED /* SYVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideo.h; sourceTree = "<group>"; };
 		A74ACAAA210AEBEE001D02ED /* SYVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideoPlayer.h; sourceTree = "<group>"; };
 		A74ACAAB210AEBFF001D02ED /* SYVideoRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideoRecorder.h; sourceTree = "<group>"; };
@@ -116,6 +115,8 @@
 		A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAVCaptureSessionFileOutVC.m; sourceTree = "<group>"; };
 		A74ACAB3210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderAVCaptureSessionWriteVC.h; sourceTree = "<group>"; };
 		A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAVCaptureSessionWriteVC.m; sourceTree = "<group>"; };
+		A75B3E022227E6C500F0AB45 /* SYAVPlayerProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerProgressView.h; sourceTree = "<group>"; };
+		A75B3E032227E6C500F0AB45 /* SYAVPlayerProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerProgressView.m; sourceTree = "<group>"; };
 		A77EC17A1DD2B453006DDBFF /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
 		A77EC17D1DD30CCD006DDBFF /* AVPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerVC.h; sourceTree = "<group>"; };
 		A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerVC.m; sourceTree = "<group>"; };
@@ -135,9 +136,11 @@
 		A7EE10181DCC8635000262F1 /* DemoVideoPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoVideoPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE101C1DCC8635000262F1 /* DemoVideoPlayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoVideoPlayUITests.m; sourceTree = "<group>"; };
 		A7EE101E1DCC8635000262F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7EE102A1DCC8AA9000262F1 /* MPMoviePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMoviePlayerVC.h; sourceTree = "<group>"; };
-		A7EE102B1DCC8AA9000262F1 /* MPMoviePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMoviePlayerVC.m; sourceTree = "<group>"; };
 		A7F7C86C1DD46D1E002EBD07 /* movie02.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = movie02.mov; sourceTree = "<group>"; };
+		A7F92626222662750081DC8A /* SYAVPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerController.h; sourceTree = "<group>"; };
+		A7F92627222662750081DC8A /* SYAVPlayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerController.m; sourceTree = "<group>"; };
+		A7F92629222663BC0081DC8A /* AVPlayerControllerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerControllerVC.h; sourceTree = "<group>"; };
+		A7F9262A222663BC0081DC8A /* AVPlayerControllerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerControllerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +182,8 @@
 		A74ACA63210AEBB7001D02ED /* SYVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A7F92625222662640081DC8A /* SYAVPlayerController */,
 				A74ACA64210AEBB7001D02ED /* SYAVPlayer */,
-				A74ACA88210AEBB7001D02ED /* SYMPMoviePlayer */,
 				A74ACAAA210AEBEE001D02ED /* SYVideoPlayer.h */,
 			);
 			path = SYVideoPlayer;
@@ -196,6 +199,8 @@
 				A74ACA69210AEBB7001D02ED /* SYAVPlayerHeader.h */,
 				A74ACA6A210AEBB7001D02ED /* SYAVPlayerStatusView.h */,
 				A74ACA6B210AEBB7001D02ED /* SYAVPlayerStatusView.m */,
+				A75B3E022227E6C500F0AB45 /* SYAVPlayerProgressView.h */,
+				A75B3E032227E6C500F0AB45 /* SYAVPlayerProgressView.m */,
 				A74ACA6C210AEBB7001D02ED /* SYAVPlayerTools.h */,
 				A74ACA6D210AEBB7001D02ED /* SYAVPlayerTools.m */,
 				A74ACA6E210AEBB7001D02ED /* SYAVPlayerView.h */,
@@ -235,15 +240,6 @@
 			path = SYAVPlayerImages;
 			sourceTree = "<group>";
 		};
-		A74ACA88210AEBB7001D02ED /* SYMPMoviePlayer */ = {
-			isa = PBXGroup;
-			children = (
-				A74ACA89210AEBB7001D02ED /* SYMPMoviePlayer.h */,
-				A74ACA8A210AEBB7001D02ED /* SYMPMoviePlayer.m */,
-			);
-			path = SYMPMoviePlayer;
-			sourceTree = "<group>";
-		};
 		A74ACA8B210AEBB7001D02ED /* SYVideoRecorder */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,15 +259,6 @@
 				A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */,
 			);
 			path = MovieRecorder;
-			sourceTree = "<group>";
-		};
-		A77EC17C1DD2B640006DDBFF /* MPMoviePlayerViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A7EE102A1DCC8AA9000262F1 /* MPMoviePlayerVC.h */,
-				A7EE102B1DCC8AA9000262F1 /* MPMoviePlayerVC.m */,
-			);
-			name = MPMoviePlayerViewController;
 			sourceTree = "<group>";
 		};
 		A7EE0FEB1DCC8634000262F1 = {
@@ -301,10 +288,9 @@
 				A7EE0FFB1DCC8634000262F1 /* AppDelegate.m */,
 				A7EE0FFD1DCC8634000262F1 /* ViewController.h */,
 				A7EE0FFE1DCC8634000262F1 /* ViewController.m */,
+				A7F9262422265F060081DC8A /* MoviePlayer */,
 				A74ACAAC210AF0D6001D02ED /* MovieRecorder */,
 				A74ACA62210AEBB7001D02ED /* SYVideo */,
-				A7F7C7ED1DD417CB002EBD07 /* AVPlayer */,
-				A77EC17C1DD2B640006DDBFF /* MPMoviePlayerViewController */,
 				A77EC17A1DD2B453006DDBFF /* movie.mp4 */,
 				A7F7C86C1DD46D1E002EBD07 /* movie02.mov */,
 				A7EE10001DCC8634000262F1 /* Main.storyboard */,
@@ -342,13 +328,24 @@
 			path = DemoVideoPlayUITests;
 			sourceTree = "<group>";
 		};
-		A7F7C7ED1DD417CB002EBD07 /* AVPlayer */ = {
+		A7F9262422265F060081DC8A /* MoviePlayer */ = {
 			isa = PBXGroup;
 			children = (
 				A77EC17D1DD30CCD006DDBFF /* AVPlayerVC.h */,
 				A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */,
+				A7F92629222663BC0081DC8A /* AVPlayerControllerVC.h */,
+				A7F9262A222663BC0081DC8A /* AVPlayerControllerVC.m */,
 			);
-			name = AVPlayer;
+			name = MoviePlayer;
+			sourceTree = "<group>";
+		};
+		A7F92625222662640081DC8A /* SYAVPlayerController */ = {
+			isa = PBXGroup;
+			children = (
+				A7F92626222662750081DC8A /* SYAVPlayerController.h */,
+				A7F92627222662750081DC8A /* SYAVPlayerController.m */,
+			);
+			path = SYAVPlayerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +415,8 @@
 				TargetAttributes = {
 					A7EE0FF31DCC8634000262F1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9YWJ3PZHZG;
+						ProvisioningStyle = Manual;
 					};
 					A7EE100C1DCC8635000262F1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -507,13 +506,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EE0FFF1DCC8634000262F1 /* ViewController.m in Sources */,
-				A74ACAA8210AEBB7001D02ED /* SYMPMoviePlayer.m in Sources */,
+				A7F9262B222663BC0081DC8A /* AVPlayerControllerVC.m in Sources */,
 				A74ACA8F210AEBB7001D02ED /* SYAVPlayerTools.m in Sources */,
 				A74ACAB2210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m in Sources */,
 				A74ACA8D210AEBB7001D02ED /* SYAVPlayerActionView.m in Sources */,
-				A7EE102C1DCC8AA9000262F1 /* MPMoviePlayerVC.m in Sources */,
 				A74ACA8C210AEBB7001D02ED /* SYAVPlayer.m in Sources */,
 				A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */,
+				A75B3E042227E6C500F0AB45 /* SYAVPlayerProgressView.m in Sources */,
+				A7F92628222662750081DC8A /* SYAVPlayerController.m in Sources */,
 				A7EE0FFC1DCC8634000262F1 /* AppDelegate.m in Sources */,
 				A74ACA90210AEBB7001D02ED /* SYAVPlayerView.m in Sources */,
 				A7EE0FF91DCC8634000262F1 /* main.m in Sources */,
@@ -660,11 +660,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9YWJ3PZHZG;
 				INFOPLIST_FILE = DemoVideoPlay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zsy.DemoVideoPlay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byd.common;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Development_Provisioning_BYDCommon;
 			};
 			name = Debug;
 		};
@@ -672,11 +675,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9YWJ3PZHZG;
 				INFOPLIST_FILE = DemoVideoPlay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zsy.DemoVideoPlay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byd.common;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Development_Provisioning_BYDCommon;
 			};
 			name = Release;
 		};
