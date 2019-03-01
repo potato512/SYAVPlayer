@@ -283,6 +283,81 @@
     }
 }
 
+- (void)enterFullscreen {
+    
+//    if (self.isFullScreen) {
+//        return;
+//    }
+//    self.oldFrame = self.frame;
+//    self.parentV = self.superview;
+//    self.fullScrrenBtn.hidden = YES;
+//
+//    CGRect rectInWindow = [self convertRect:self.bounds toView:[UIApplication sharedApplication].keyWindow];
+//    [self removeFromSuperview];
+//    self.frame = rectInWindow;
+//
+//
+//
+//    NSLog(@"self1:%@",self);
+//    [[UIApplication sharedApplication].keyWindow addSubview:self];
+//
+//
+//    [UIView animateWithDuration:0.3 animations:^{
+//
+//        self.transform = CGAffineTransformMakeRotation(M_PI_2);
+//        self.bounds = CGRectMake(0, 0, CGRectGetHeight(self.superview.bounds), CGRectGetWidth(self.superview.bounds));
+//        self.center = CGPointMake(CGRectGetMidX(self.superview.bounds), CGRectGetMidY(self.superview.bounds));
+//        [self.player refreshFrame:self.bounds];
+//
+//    } completion:^(BOOL finished) {
+//        self.isFullScreen = YES;
+//        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
+//        NSLog(@"self2:%@",self);
+//        self.ctrView.frame = CGRectMake(0, self.getVWidth-kCtrViewHeight, self.getVHeight,kCtrViewHeight);
+//        [self showSubV];
+//
+//    }];
+//    [self tap];
+}
+
+- (void)exitFullscreen {
+    
+//    if (!self.isFullScreen) {
+//        return;
+//    }
+//
+//    [self.fullScrrenBtn setHidden:NO];
+//
+//    [self.ctrView hidden];
+//    CGRect frame = [self.superview convertRect:self.oldFrame toView:[UIApplication sharedApplication].keyWindow];
+//    [UIView animateWithDuration:0.3 animations:^{
+//        self.transform = CGAffineTransformIdentity;
+//        self.frame = frame;
+//        [self.player setPlayViewHidden:YES];
+//    } completion:^(BOOL finished) {
+//
+//        [self removeFromSuperview];
+//        self.frame = self.oldFrame;
+//
+//        [self.player refreshFrame:self.bounds];
+//        [self.player setPlayViewHidden:NO];
+//
+//        //        if (self.parentV.subviews.count>0) {
+//        //          [self.parentV insertSubview:self atIndex:self.parentV.subviews.count-1];
+//        //        }else
+//        //        {
+//        [self.parentV addSubview:self];
+//        //        }
+//
+//        self.isFullScreen = NO;
+//        self.headView.hidden = NO;
+//        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//
+//    }];
+    
+}
+
 #pragma mark 缓存
 
 - (CGFloat)cacheSize
