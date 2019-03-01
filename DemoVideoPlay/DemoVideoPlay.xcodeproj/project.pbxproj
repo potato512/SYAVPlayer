@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09575FF89217E93D8670ED82 /* libPods-DemoVideoPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F297CA1F739FC059F1FC1CF /* libPods-DemoVideoPlay.a */; };
+		1D2D0CF1C70FD829904EC5AC /* libPods-DemoVideoPlayUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAB10ADEB39232519D5B687 /* libPods-DemoVideoPlayUITests.a */; };
+		2A9CA6B64CE75246365D6EB1 /* libPods-DemoVideoPlayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D9033FF67AC95AE7DF2258 /* libPods-DemoVideoPlayTests.a */; };
 		A74ACA8C210AEBB7001D02ED /* SYAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA66210AEBB7001D02ED /* SYAVPlayer.m */; };
 		A74ACA8D210AEBB7001D02ED /* SYAVPlayerActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA68210AEBB7001D02ED /* SYAVPlayerActionView.m */; };
 		A74ACA8E210AEBB7001D02ED /* SYAVPlayerStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACA6B210AEBB7001D02ED /* SYAVPlayerStatusView.m */; };
@@ -38,6 +41,8 @@
 		A74ACAAF210AF0FF001D02ED /* RecorderImagePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAAE210AF0FF001D02ED /* RecorderImagePickerVC.m */; };
 		A74ACAB2210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */; };
 		A74ACAB5210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */; };
+		A74B55C52228B4ED001423EA /* SYLivePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A74B55C42228B4ED001423EA /* SYLivePlayer.m */; };
+		A74B55C82228B8D6001423EA /* AVLivePlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74B55C72228B8D6001423EA /* AVLivePlayVC.m */; };
 		A75B3E042227E6C500F0AB45 /* SYAVPlayerProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B3E032227E6C500F0AB45 /* SYAVPlayerProgressView.m */; };
 		A77EC17B1DD2B453006DDBFF /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A77EC17A1DD2B453006DDBFF /* movie.mp4 */; };
 		A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */; };
@@ -72,6 +77,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09C335DF68F305D51938B70C /* Pods-DemoVideoPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoVideoPlay.release.xcconfig"; path = "Target Support Files/Pods-DemoVideoPlay/Pods-DemoVideoPlay.release.xcconfig"; sourceTree = "<group>"; };
+		0F297CA1F739FC059F1FC1CF /* libPods-DemoVideoPlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DemoVideoPlay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		322A36F4C563A2AFD6E2EFC0 /* Pods-DemoVideoPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoVideoPlay.debug.xcconfig"; path = "Target Support Files/Pods-DemoVideoPlay/Pods-DemoVideoPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		4099BEE5CC0B4FA74D2DB701 /* Pods-DemoVideoPlayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoVideoPlayTests.release.xcconfig"; path = "Target Support Files/Pods-DemoVideoPlayTests/Pods-DemoVideoPlayTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CF1488CFBA2A99E6F6317DA /* Pods-DemoVideoPlayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoVideoPlayTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoVideoPlayTests/Pods-DemoVideoPlayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FAB10ADEB39232519D5B687 /* libPods-DemoVideoPlayUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DemoVideoPlayUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74ACA65210AEBB7001D02ED /* SYAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayer.h; sourceTree = "<group>"; };
 		A74ACA66210AEBB7001D02ED /* SYAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayer.m; sourceTree = "<group>"; };
 		A74ACA67210AEBB7001D02ED /* SYAVPlayerActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerActionView.h; sourceTree = "<group>"; };
@@ -115,6 +126,10 @@
 		A74ACAB1210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAVCaptureSessionFileOutVC.m; sourceTree = "<group>"; };
 		A74ACAB3210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderAVCaptureSessionWriteVC.h; sourceTree = "<group>"; };
 		A74ACAB4210AF145001D02ED /* RecorderAVCaptureSessionWriteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAVCaptureSessionWriteVC.m; sourceTree = "<group>"; };
+		A74B55C32228B4ED001423EA /* SYLivePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYLivePlayer.h; sourceTree = "<group>"; };
+		A74B55C42228B4ED001423EA /* SYLivePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYLivePlayer.m; sourceTree = "<group>"; };
+		A74B55C62228B8D6001423EA /* AVLivePlayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVLivePlayVC.h; sourceTree = "<group>"; };
+		A74B55C72228B8D6001423EA /* AVLivePlayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVLivePlayVC.m; sourceTree = "<group>"; };
 		A75B3E022227E6C500F0AB45 /* SYAVPlayerProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAVPlayerProgressView.h; sourceTree = "<group>"; };
 		A75B3E032227E6C500F0AB45 /* SYAVPlayerProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerProgressView.m; sourceTree = "<group>"; };
 		A77EC17A1DD2B453006DDBFF /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
@@ -141,6 +156,9 @@
 		A7F92627222662750081DC8A /* SYAVPlayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAVPlayerController.m; sourceTree = "<group>"; };
 		A7F92629222663BC0081DC8A /* AVPlayerControllerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerControllerVC.h; sourceTree = "<group>"; };
 		A7F9262A222663BC0081DC8A /* AVPlayerControllerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerControllerVC.m; sourceTree = "<group>"; };
+		C2FC9526C8F4FE63967B1AC7 /* Pods-DemoVideoPlayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoVideoPlayUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoVideoPlayUITests/Pods-DemoVideoPlayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DBBD97785B3EB34C7CB058C7 /* Pods-DemoVideoPlayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoVideoPlayUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoVideoPlayUITests/Pods-DemoVideoPlayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5D9033FF67AC95AE7DF2258 /* libPods-DemoVideoPlayTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DemoVideoPlayTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09575FF89217E93D8670ED82 /* libPods-DemoVideoPlay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9CA6B64CE75246365D6EB1 /* libPods-DemoVideoPlayTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,12 +182,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2D0CF1C70FD829904EC5AC /* libPods-DemoVideoPlayUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41F02B2AFAA33DD6C5E590C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				322A36F4C563A2AFD6E2EFC0 /* Pods-DemoVideoPlay.debug.xcconfig */,
+				09C335DF68F305D51938B70C /* Pods-DemoVideoPlay.release.xcconfig */,
+				4CF1488CFBA2A99E6F6317DA /* Pods-DemoVideoPlayTests.debug.xcconfig */,
+				4099BEE5CC0B4FA74D2DB701 /* Pods-DemoVideoPlayTests.release.xcconfig */,
+				DBBD97785B3EB34C7CB058C7 /* Pods-DemoVideoPlayUITests.debug.xcconfig */,
+				C2FC9526C8F4FE63967B1AC7 /* Pods-DemoVideoPlayUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A74ACA62210AEBB7001D02ED /* SYVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +216,7 @@
 		A74ACA63210AEBB7001D02ED /* SYVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A74B55C22228B4DF001423EA /* SYLivePlayer */,
 				A7F92625222662640081DC8A /* SYAVPlayerController */,
 				A74ACA64210AEBB7001D02ED /* SYAVPlayer */,
 				A74ACAAA210AEBEE001D02ED /* SYVideoPlayer.h */,
@@ -261,6 +296,15 @@
 			path = MovieRecorder;
 			sourceTree = "<group>";
 		};
+		A74B55C22228B4DF001423EA /* SYLivePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A74B55C32228B4ED001423EA /* SYLivePlayer.h */,
+				A74B55C42228B4ED001423EA /* SYLivePlayer.m */,
+			);
+			path = SYLivePlayer;
+			sourceTree = "<group>";
+		};
 		A7EE0FEB1DCC8634000262F1 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +312,8 @@
 				A7EE10101DCC8635000262F1 /* DemoVideoPlayTests */,
 				A7EE101B1DCC8635000262F1 /* DemoVideoPlayUITests */,
 				A7EE0FF51DCC8634000262F1 /* Products */,
+				41F02B2AFAA33DD6C5E590C9 /* Pods */,
+				EBBEA2458B6602C848A5AF07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,6 +381,8 @@
 				A77EC17E1DD30CCD006DDBFF /* AVPlayerVC.m */,
 				A7F92629222663BC0081DC8A /* AVPlayerControllerVC.h */,
 				A7F9262A222663BC0081DC8A /* AVPlayerControllerVC.m */,
+				A74B55C62228B8D6001423EA /* AVLivePlayVC.h */,
+				A74B55C72228B8D6001423EA /* AVLivePlayVC.m */,
 			);
 			name = MoviePlayer;
 			sourceTree = "<group>";
@@ -348,6 +396,16 @@
 			path = SYAVPlayerController;
 			sourceTree = "<group>";
 		};
+		EBBEA2458B6602C848A5AF07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F297CA1F739FC059F1FC1CF /* libPods-DemoVideoPlay.a */,
+				E5D9033FF67AC95AE7DF2258 /* libPods-DemoVideoPlayTests.a */,
+				7FAB10ADEB39232519D5B687 /* libPods-DemoVideoPlayUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,9 +413,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7EE10211DCC8635000262F1 /* Build configuration list for PBXNativeTarget "DemoVideoPlay" */;
 			buildPhases = (
+				3D923486FDD72FAFE7EAB8DC /* [CP] Check Pods Manifest.lock */,
 				A7EE0FF01DCC8634000262F1 /* Sources */,
 				A7EE0FF11DCC8634000262F1 /* Frameworks */,
 				A7EE0FF21DCC8634000262F1 /* Resources */,
+				90E6475CE5CFD2CF08C19E51 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,6 +432,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7EE10241DCC8635000262F1 /* Build configuration list for PBXNativeTarget "DemoVideoPlayTests" */;
 			buildPhases = (
+				F7F00991B01EC07194291E24 /* [CP] Check Pods Manifest.lock */,
 				A7EE10091DCC8635000262F1 /* Sources */,
 				A7EE100A1DCC8635000262F1 /* Frameworks */,
 				A7EE100B1DCC8635000262F1 /* Resources */,
@@ -390,6 +451,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7EE10271DCC8635000262F1 /* Build configuration list for PBXNativeTarget "DemoVideoPlayUITests" */;
 			buildPhases = (
+				2561594A0A49EF156B031E80 /* [CP] Check Pods Manifest.lock */,
 				A7EE10141DCC8635000262F1 /* Sources */,
 				A7EE10151DCC8635000262F1 /* Frameworks */,
 				A7EE10161DCC8635000262F1 /* Resources */,
@@ -500,6 +562,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2561594A0A49EF156B031E80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoVideoPlayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D923486FDD72FAFE7EAB8DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoVideoPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90E6475CE5CFD2CF08C19E51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoVideoPlay/Pods-DemoVideoPlay-frameworks.sh",
+				"${PODS_ROOT}/PLPlayerKit/Pod/Library/PLPlayerKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PLPlayerKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoVideoPlay/Pods-DemoVideoPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7F00991B01EC07194291E24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoVideoPlayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7EE0FF01DCC8634000262F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -507,9 +660,11 @@
 			files = (
 				A7EE0FFF1DCC8634000262F1 /* ViewController.m in Sources */,
 				A7F9262B222663BC0081DC8A /* AVPlayerControllerVC.m in Sources */,
+				A74B55C52228B4ED001423EA /* SYLivePlayer.m in Sources */,
 				A74ACA8F210AEBB7001D02ED /* SYAVPlayerTools.m in Sources */,
 				A74ACAB2210AF131001D02ED /* RecorderAVCaptureSessionFileOutVC.m in Sources */,
 				A74ACA8D210AEBB7001D02ED /* SYAVPlayerActionView.m in Sources */,
+				A74B55C82228B8D6001423EA /* AVLivePlayVC.m in Sources */,
 				A74ACA8C210AEBB7001D02ED /* SYAVPlayer.m in Sources */,
 				A77EC17F1DD30CCD006DDBFF /* AVPlayerVC.m in Sources */,
 				A75B3E042227E6C500F0AB45 /* SYAVPlayerProgressView.m in Sources */,
@@ -658,6 +813,7 @@
 		};
 		A7EE10221DCC8635000262F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 322A36F4C563A2AFD6E2EFC0 /* Pods-DemoVideoPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -673,6 +829,7 @@
 		};
 		A7EE10231DCC8635000262F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C335DF68F305D51938B70C /* Pods-DemoVideoPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -688,6 +845,7 @@
 		};
 		A7EE10251DCC8635000262F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF1488CFBA2A99E6F6317DA /* Pods-DemoVideoPlayTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DemoVideoPlayTests/Info.plist;
@@ -700,6 +858,7 @@
 		};
 		A7EE10261DCC8635000262F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4099BEE5CC0B4FA74D2DB701 /* Pods-DemoVideoPlayTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DemoVideoPlayTests/Info.plist;
@@ -712,6 +871,7 @@
 		};
 		A7EE10281DCC8635000262F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBBD97785B3EB34C7CB058C7 /* Pods-DemoVideoPlayUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DemoVideoPlayUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -724,6 +884,7 @@
 		};
 		A7EE10291DCC8635000262F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FC9526C8F4FE63967B1AC7 /* Pods-DemoVideoPlayUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DemoVideoPlayUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

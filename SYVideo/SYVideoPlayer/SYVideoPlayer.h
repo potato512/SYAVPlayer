@@ -8,6 +8,7 @@
 
 #import "SYAVPlayer.h"
 #import "SYAVPlayerController.h"
+#import "SYLivePlayer.h"
 
 #ifndef SYVideoPlayer_h
 #define SYVideoPlayer_h

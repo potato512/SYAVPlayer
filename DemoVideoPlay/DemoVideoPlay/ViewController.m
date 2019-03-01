@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AVPlayerVC.h"
 #import "AVPlayerControllerVC.h"
+#import "AVLivePlayVC.h"
 
 #import "RecorderImagePickerVC.h"
 #import "RecorderAVCaptureSessionFileOutVC.h"
@@ -63,7 +64,7 @@
 - (NSArray *)mainArray
 {
     if (_mainArray == nil) {
-        _mainArray = @[@"AVPlayer", @"AVPlayerViewController", @"UIImagePickerController 录像", @"AVCaptureSession+AVCaptureMovieFileOutput 录像", @"AVCaptureSession+AVAssetWriter 录像"];
+        _mainArray = @[@"AVPlayer", @"AVPlayerViewController", @"UIImagePickerController 录像", @"AVCaptureSession+AVCaptureMovieFileOutput 录像", @"AVCaptureSession+AVAssetWriter 录像", @"视频直播"];
     }
     
     return _mainArray;
@@ -107,6 +108,9 @@
         [self.navigationController pushViewController:nextVC animated:YES];
     } else if (4 == indexPath.row) {
         RecorderAVCaptureSessionWriteVC *nextVC = [[RecorderAVCaptureSessionWriteVC alloc] init];
+        [self.navigationController pushViewController:nextVC animated:YES];
+    } else if (5 == indexPath.row) {
+        AVLivePlayVC *nextVC = [[AVLivePlayVC alloc] init];
         [self.navigationController pushViewController:nextVC animated:YES];
     }
 }
